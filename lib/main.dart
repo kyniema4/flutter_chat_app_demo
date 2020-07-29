@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import './chatchat.dart';
+import './tabs.dart';
+import 'chatChat/chatChat.dart';
+import 'chatChat/chatchat_edit.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,12 +15,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.light,
-        // primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
+        // primarySwatch: Colors.purpleMain,
         // visualDensity: VisualDensity.adaptivePlatformDensity,
         // accentColor: Colors.deepPurple,
       ),
       routes: {
-        '/': (BuildContext context) => ChatchatPage(),
+        '/': (BuildContext context) => TabsPage(),
+        '/chatchat': (BuildContext context) => ChatChatPage(),
+        '/chatchat_edit': (BuildContext context) => ChatChatEditPage(),
+        // '/': (BuildContext context) => ChatChatPage(),
       },
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
