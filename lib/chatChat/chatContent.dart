@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/foundation.dart';
 // import 'chatContent.dart';
 // import 'chatChat.dart';
+import 'chatchat_edit.dart';
 
 class ChatContentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushReplacementNamed(context, '/chatchat_edit');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ChatChatEditPage()),
+        );
+        // Navigator.pushReplacementNamed(context, '/chatchat_edit');
       },
       // onTap: () => print("Container pressed"), // handle your onTap here
       child: Container(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: List.generate(
-            20,
+            1,
             (index) => Row(
               children: <Widget>[
                 Expanded(
