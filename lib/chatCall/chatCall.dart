@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 // import 'utils/theme.dart' as Theme;
-import '../components/header.dart';
-
-const Color _colorOne = Color(0x33000000);
-const Color _colorTwo = Color(0x24000000);
-
-void main() {
-  runApp(new ChatCall());
-}
+// import '../components/header.dart';
 
 class ChatCall extends StatefulWidget {
   @override
@@ -21,26 +14,41 @@ class _ChatCall extends State<ChatCall> {
     1: Text('Logo 2'),
   };
 
-  final Map<int, Widget> icons = const <int, Widget>{
-    0: Center(
-      child: ListTile(
-        title: Text('Three-line ListTile'),
-        subtitle: Text('A sufficiently long subtitle warrants three lines.'),
-        trailing: ListTile(
-          leading: FlutterLogo(size: 72.0),
-          trailing: Icon(Icons.more_vert),
-        ),
-        leading: Text('djs'),
+  final Map<int, Widget> icons = <int, Widget>{
+    0: Container(
+      decoration: new BoxDecoration(color: Colors.red),
+      height: 70.0,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+              flex: 5,
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Text('dfsg'),
+                    Text(
+                      'gfhfthf asbefuef f ewrfe sfewhyf ew',
+                    ),
+                  ],
+                ),
+              )),
+          Expanded(
+            flex: 1,
+            child: Text('desfh'),
+          ),
+          Expanded(
+            flex: 1,
+            child: Text('dfef'),
+          ),
+        ],
       ),
     ),
-    1: Center(
-      child: ListTile(
-        leading: FlutterLogo(size: 72.0),
-        title: Text('Three-line ListTile'),
-        subtitle: Text('A sufficiently long subtitle warrants three lines.'),
-        trailing: Icon(Icons.more_vert),
-        isThreeLine: true,
-      ),
+    1: ListTile(
+      leading: FlutterLogo(size: 72.0),
+      title: Text('Three-line ListTile'),
+      subtitle: Text('A sufficiently long subtitle warrants three lines.'),
+      trailing: Icon(Icons.more_vert),
+      isThreeLine: true,
     ),
   };
 
@@ -56,6 +64,9 @@ class _ChatCall extends State<ChatCall> {
               SizedBox(
                 width: 200.0,
                 child: CupertinoSegmentedControl<int>(
+                  borderColor: Colors.grey,
+                  selectedColor: Colors.redAccent,
+                  unselectedColor: Colors.white,
                   children: logoWidgets,
                   onValueChanged: (int val) {
                     setState(() {
@@ -88,9 +99,6 @@ class _ChatCall extends State<ChatCall> {
                         borderRadius: BorderRadius.all(Radius.circular(5.0)))),
               ),
             ),
-            Container(
-              child: icons[sharedValue],
-            ),
             // Row(
             //   children: <Widget>[
             //     Expanded(
@@ -108,23 +116,12 @@ class _ChatCall extends State<ChatCall> {
             //     ),
             //   ],
             // ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-            ),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: const <BoxShadow>[
-                    BoxShadow(
-                      color: _colorOne,
-                    ),
-                    BoxShadow(
-                      color: _colorTwo,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
+            Column(
+                children: List.generate(
+              2,
+              (index) => icons[sharedValue],
+            ))
           ],
         ),
       ),

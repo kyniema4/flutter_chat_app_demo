@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 class Data {
   Data._();
   static getTheme(BuildContext context) {
     return Theme.of(context);
   }
 }
+
 class Colors {
   Colors._(); // this basically makes it so you can instantiate this class
   static const Color whiteGray = Color(0xfff9fbfd);
@@ -30,4 +32,5 @@ class Colors {
   static const white = Color(0xffffffff);
   static const transparent = Color(0x00ffffff);
   static const purpleMain = Color(0xff6e5694);
+  static const blue293 = Color(0xff29353b);
 }

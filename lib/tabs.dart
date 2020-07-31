@@ -6,6 +6,8 @@ import 'chatChat/chatChatHeader.dart';
 import 'chatContact/chatcontact.dart';
 import 'chatContact/chatContactHeader.dart';
 import 'chatCall/chatCall.dart';
+import 'chatsetting.dart';
+import 'utils/theme.dart' as Theme;
 
 class TabsPage extends StatefulWidget {
   @override
@@ -25,20 +27,18 @@ class _TabsPage extends State<TabsPage> {
         },
         children: <Widget>[
           Scaffold(
-            appBar: ChatChatHeader(),
+            appBar: ChatContactHeader(),
             body: ChatContactPage(),
           ),
           Scaffold(
-            appBar: ChatContactHeader(),
+            appBar: ChatChatHeader(),
             body: ChatChatPage(),
           ),
           Container(
             child: ChatCall(),
           ),
-          Center(
-            child: Container(
-              child: Text('Empty Body 3'),
-            ),
+          Container(
+            child: ChatSettingPage(),
           )
         ],
         physics:
@@ -47,15 +47,16 @@ class _TabsPage extends State<TabsPage> {
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 75,
+          height: 55,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                // iconSize: 30.0,
+                iconSize: 30.0,
                 // padding: EdgeInsets.only(left: 28.0),
-                icon: Icon(Icons.person_outline),
+                icon: Icon(Icons.perm_identity),
+                color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(0);
@@ -64,9 +65,9 @@ class _TabsPage extends State<TabsPage> {
                 },
               ),
               IconButton(
-                // iconSize: 30.0,
-                // padding: EdgeInsets.only(right: 28.0),
                 icon: Icon(Icons.chat_bubble_outline),
+                iconSize: 30.0,
+                color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(1);
@@ -75,9 +76,9 @@ class _TabsPage extends State<TabsPage> {
                 },
               ),
               IconButton(
-                // iconSize: 30.0,
-                // padding: EdgeInsets.only(left: 28.0),
                 icon: Icon(Icons.local_phone),
+                iconSize: 30.0,
+                color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(2);
@@ -85,9 +86,9 @@ class _TabsPage extends State<TabsPage> {
                 },
               ),
               IconButton(
-                // iconSize: 30.0,
-                // padding: EdgeInsets.only(right: 28.0),
                 icon: Icon(Icons.settings),
+                iconSize: 30.0,
+                color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(3);
