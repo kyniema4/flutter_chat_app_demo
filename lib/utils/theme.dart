@@ -32,5 +32,12 @@ class Colors {
   static const white = Color(0xffffffff);
   static const transparent = Color(0x00ffffff);
   static const purpleMain = Color(0xff6e5694);
+// setting
   static const blue293 = Color(0xff29353b);
+  static const grey666 = Color(0xff666666);
+  static const greyede = Color(0xffededed);
+  static const grey9cd = Color(0xffc9c9cd);
+  // static const grey565 = Color(0xff656565);
+
+  static const red63b = Color(0xffe6463b);
 }

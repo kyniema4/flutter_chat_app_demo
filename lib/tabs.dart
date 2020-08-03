@@ -15,7 +15,7 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPage extends State<TabsPage> {
-  PageController _myPage = PageController(initialPage: 0);
+  PageController _myPage = PageController(initialPage: 3);
   String title;
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _TabsPage extends State<TabsPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                iconSize: 30.0,
+                iconSize: 28.0,
                 // padding: EdgeInsets.only(left: 28.0),
                 icon: Icon(Icons.perm_identity),
                 color: Theme.Colors.blue293,
@@ -66,7 +66,7 @@ class _TabsPage extends State<TabsPage> {
               ),
               IconButton(
                 icon: Icon(Icons.chat_bubble_outline),
-                iconSize: 30.0,
+                iconSize: 28.0,
                 color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
@@ -77,7 +77,7 @@ class _TabsPage extends State<TabsPage> {
               ),
               IconButton(
                 icon: Icon(Icons.local_phone),
-                iconSize: 30.0,
+                iconSize: 28.0,
                 color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
@@ -87,7 +87,7 @@ class _TabsPage extends State<TabsPage> {
               ),
               IconButton(
                 icon: Icon(Icons.settings),
-                iconSize: 30.0,
+                iconSize: 28.0,
                 color: Theme.Colors.blue293,
                 onPressed: () {
                   setState(() {
