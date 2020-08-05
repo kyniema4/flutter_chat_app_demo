@@ -17,6 +17,11 @@ class TabsPage extends StatefulWidget {
 class _TabsPage extends State<TabsPage> {
   PageController _myPage = PageController(initialPage: 3);
   String title;
+  Color _iconColor0 = Theme.Colors.blue293;
+  Color _iconColor1 = Theme.Colors.blue293;
+  Color _iconColor2 = Theme.Colors.blue293;
+  Color _iconColor3 = Theme.Colors.blue293;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,13 +56,17 @@ class _TabsPage extends State<TabsPage> {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
+            children: [
               IconButton(
                 iconSize: 28.0,
-                // padding: EdgeInsets.only(left: 28.0),
                 icon: Icon(Icons.perm_identity),
-                color: Theme.Colors.blue293,
+                color: _iconColor0,
                 onPressed: () {
+                  _iconColor0 = Theme.Colors.purpleMain;
+                  _iconColor1 = Theme.Colors.blue293;
+                  _iconColor2 = Theme.Colors.blue293;
+                  _iconColor3 = Theme.Colors.blue293;
+
                   setState(() {
                     _myPage.jumpToPage(0);
                     title = 'Contacts';
@@ -67,8 +76,12 @@ class _TabsPage extends State<TabsPage> {
               IconButton(
                 icon: Icon(Icons.chat_bubble_outline),
                 iconSize: 28.0,
-                color: Theme.Colors.blue293,
+                color: _iconColor1,
                 onPressed: () {
+                  _iconColor1 = Theme.Colors.purpleMain;
+                  _iconColor0 = Theme.Colors.blue293;
+                  _iconColor2 = Theme.Colors.blue293;
+                  _iconColor3 = Theme.Colors.blue293;
                   setState(() {
                     _myPage.jumpToPage(1);
                     title = 'Chats';
@@ -78,20 +91,28 @@ class _TabsPage extends State<TabsPage> {
               IconButton(
                 icon: Icon(Icons.local_phone),
                 iconSize: 28.0,
-                color: Theme.Colors.blue293,
+                color: _iconColor2,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(2);
+                    _iconColor2 = Theme.Colors.purpleMain;
+                    _iconColor0 = Theme.Colors.blue293;
+                    _iconColor1 = Theme.Colors.blue293;
+                    _iconColor3 = Theme.Colors.blue293;
                   });
                 },
               ),
               IconButton(
                 icon: Icon(Icons.settings),
                 iconSize: 28.0,
-                color: Theme.Colors.blue293,
+                color: _iconColor3,
                 onPressed: () {
                   setState(() {
                     _myPage.jumpToPage(3);
+                    _iconColor3 = Theme.Colors.purpleMain;
+                    _iconColor0 = Theme.Colors.blue293;
+                    _iconColor1 = Theme.Colors.blue293;
+                    _iconColor2 = Theme.Colors.blue293;
                   });
                 },
               )
