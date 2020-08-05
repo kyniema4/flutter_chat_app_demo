@@ -40,4 +40,5 @@ class Colors {
   // static const grey565 = Color(0xff656565);
 
   static const red63b = Color(0xffe6463b);
+  static const black63b = Color(0xff343635);
 }
