@@ -1,76 +1,84 @@
-// import 'package:chat/chatChat/chatContent.dart';
 import 'package:flutter/material.dart';
-
-// import 'utils/theme.dart' as Theme;
-// import 'components/header.dart';
-// import 'components/footer.dart';
-// import 'chatContent.dart';
+import '../components/header.dart';
+import '../components/search.dart';
+import '../utils/theme.dart' as Theme;
 
 class ChatContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              // onChanged: (value) {
-              //   filterSearchResults(value);
-              // },
-              // controller: editingController,
-              decoration: InputDecoration(
-                  hintText: "Search",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)))),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.Colors.purpleMain,
+        automaticallyImplyLeading: false,
+        title: Center(
+            child: Container(
+          padding: EdgeInsets.only(left: 45),
+          child: Header('Contact'),
+        )),
+        actions: <Widget>[
+          Container(
+            child: IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {},
             ),
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avt_chat_setting.png'),
-            ),
-            title: Text('Two-line ListTile'),
-            subtitle: Text('Here is a second line'),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          ListTile(
-            title: Text('Contact'),
-            dense: true,
-          ),
-          Column(
-            children: <Widget>[
-              ListTile(
-                leading: Ink(
-                  decoration: const ShapeDecoration(
-                    color: Colors.lightBlue,
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    icon: Icon(Icons.add),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ),
-                title: Text('Invite Friend'),
-              ),
-              ListTile(
+        ],
+      ),
+      body: Container(
+        child: ListView(
+          children: <Widget>[
+            Search(),
+            // SizedBox(
+            //   height: 10.0,
+            // ),
+            Container(
+              height: 100,
+              child: ListTile(
                 leading: CircleAvatar(
+                  radius: 50.0,
                   backgroundImage:
                       AssetImage('assets/images/avt_chat_setting.png'),
                 ),
                 title: Text('Two-line ListTile'),
                 subtitle: Text('Here is a second line'),
               ),
-            ],
-          )
-          // ChatContentPage(),
-        ],
+            ),
+            // SizedBox(
+            //   height: 10.0,
+            // ),
+            ListTile(
+              title: Text('Contact'),
+              dense: true,
+            ),
+            Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Ink(
+                    decoration: const ShapeDecoration(
+                      color: Colors.lightBlue,
+                      shape: CircleBorder(),
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.add),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                  title: Text('Invite Friend'),
+                ),
+                ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage:
+                        AssetImage('assets/images/avt_chat_setting.png'),
+                  ),
+                  title: Text('Two-line ListTile'),
+                  subtitle: Text('Here is a second line'),
+                ),
+              ],
+            )
+            // ChatContentPage(),
+          ],
+        ),
       ),
     );
   }

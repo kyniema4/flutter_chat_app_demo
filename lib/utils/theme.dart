@@ -38,6 +38,8 @@ class Colors {
   static const greyede = Color(0xffededed);
   static const grey9cd = Color(0xffc9c9cd);
   static const grey2b2 = Color(0xffb2b2b2);
+  static const greye93 = Color(0xff8e8e93);
+
   // static const grey565 = Color(0xff656565);
 
   static const red63b = Color(0xffe6463b);
