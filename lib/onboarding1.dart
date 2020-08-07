@@ -9,11 +9,42 @@ final List<String> imgList = [
   'assets/images/img-Boarding3.png'
 ];
 
+class SlideData {
+  final String imgSlide;
+  final String titleSlide;
+  final String contentSlide;
+
+  SlideData({
+    this.imgSlide,
+    this.titleSlide,
+    this.contentSlide
+  });
+}
+
+List<SlideData> slidedata = [
+  SlideData(
+    imgSlide: 'assets/images/img_Boarding1.png',
+    titleSlide: 'Fast Messaging',
+    contentSlide: 'Chat app fast messaging and powerful than any other application',
+  ),
+  SlideData(
+    imgSlide: 'assets/images/img-Boarding2.png',
+    titleSlide: 'Secure System',
+    contentSlide: 'Chat app secure system from hacker attack and we guarantee your data safe',
+  ),
+  SlideData(
+    imgSlide: 'assets/images/img-Boarding3.png',
+    titleSlide: 'Free Call and Chat',
+    contentSlide: 'Chat app free call and chat anytime and everytime',
+  )
+];
+
 class OnBoardingPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _OnBoardingPageState();
-  }
+  // State<StatefulWidget> createState() {
+  //   return _OnBoardingPageState();
+  // }
+  _OnBoardingPageState createState() => _OnBoardingPageState();
 }
 class _OnBoardingPageState extends State<OnBoardingPage> {
   int _current = 0;
@@ -99,8 +130,36 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
+  // _buildSlides(SlideData slidedata) {
+  //   final Container msg = Container(
+  //     padding: EdgeInsets.symmetric(horizontal: 30.0),
+  //     child: Column(
+  //       children: <Widget>[
+  //       Image.asset(slidedata.imgSlide, fit: BoxFit.contain, height: 230.0),
+  //         Column(
+  //           children: <Widget>[
+  //             SizedBox(height: 45.0),
+  //             Text(
+  //               slidedata.titleSlide,
+  //               style: titleSlideStyle,
+  //               textAlign: TextAlign.center,
+  //             ),
+  //             SizedBox(height: 25.0),
+  //             Text(
+  //               slidedata.contentSlide,
+  //               style: contentSlideStyle,
+  //               textAlign: TextAlign.center,
+  //             ),
+  //           ]
+  //         ),
+  //       ],
+  //     )
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -119,6 +178,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     imageSlidersOne(),
                     imageSlidersTwo(),
                     imageSlidersThree()
+
                   ],
                   options: CarouselOptions(
                     height: MediaQuery.of(context).size.height/1.8,

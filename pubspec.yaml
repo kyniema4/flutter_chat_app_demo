@@ -49,6 +49,7 @@ flutter:
   assets:
   - assets/images/avt_chat_setting.png
   - assets/images/avt_Friend.png
+  - assets/images/avt_Friend2.png
   - assets/images/img_Boarding1.png
   - assets/images/img-Boarding2.png
   - assets/images/img-Boarding3.png

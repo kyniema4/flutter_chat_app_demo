@@ -1,79 +1,11 @@
 import 'package:flutter/material.dart';
 import 'utils/theme.dart' as Theme;
-class User {
-  final int id;
-  final String name;
-  final String avtUrl;
-
-  User({
-    this.id,
-    this.name,
-    this.avtUrl
-  });
-}
-class Message {
-  final User sender;
-  final String time;
-  final String text;
-  final bool unread;
-
-  Message({
-    this.sender,
-    this.time,
-    this.text,
-    this.unread,
-  });
-}
-final User currentUser = User(
-  id: 0,
-  name: 'Current User',
-  avtUrl: 'assets/images/avt_chat_setting.png',
-);
-final User linda = User(
-  id: 1,
-  name: 'Linda Natasha',
-  avtUrl: 'assets/images/avt_Friend.png',
-);
-List<Message> messages = [
-  Message(
-    sender: linda,
-    text: 'ok',
-  ),
-   Message(
-    sender: linda,
-    text: 'Good idea',
-  ),
-   Message(
-    sender: currentUser,
-    text: 'Let us drink coffee together',
-  ),
-   Message(
-    sender: currentUser,
-    text: 'Awesome',
-  ),
- Message(
-    sender: linda,
-    text: 'I\'m work as developer',
-  ),
- Message(
-    sender: linda,
-    text: 'Yes',
-  ),
-  Message(
-    sender: currentUser,
-    text: 'I\'m fine, did you work?',
-  ),
- Message(
-    sender: linda,
-    text: 'Hey, How are you?',
-  ),
- Message(
-    sender: linda,
-    text: 'Hello:3',
-  ),
-];
+import 'models/chat_model.dart';
+import 'models/user_model.dart';
 
 class ChatChatDetail extends StatefulWidget {
+  final User user;
+  ChatChatDetail({this.user});
   @override
   _ChatChatDetailState createState() => _ChatChatDetailState();
 }
@@ -227,7 +159,7 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
           // alignment: Alignment.center,
           child: Column(
             children: <Widget>[
-              Text('Linda Natasha', style: TextStyle(fontSize: 20, fontFamily: 'Proxima-Nova-Regular')),
+              Text(widget.user.name, style: TextStyle(fontSize: 20, fontFamily: 'Proxima-Nova-Regular')),
               Text('online', style: TextStyle(fontSize: 12, fontFamily: 'Proxima-Nova-Regular')),
             ]
           ),
@@ -240,8 +172,7 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
             minWidth: 0,
             child: CircleAvatar(
               backgroundColor: Theme.Colors.purpleMain400,
-              backgroundImage: NetworkImage('https://kenh14cdn.com/thumb_w/640/2018/8/26/photo1535258639462-1535258639462886930077.png'),
-              // backgroundImage: AssetImage('assets/images/avt_Friend.png')
+              backgroundImage: AssetImage(widget.user.avtUrl)
             )
           )
         ],

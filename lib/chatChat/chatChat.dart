@@ -1,16 +1,23 @@
 import 'package:chat/chatChat/chatContent.dart';
 import 'package:flutter/material.dart';
+import '../models/user_model.dart';
 
 // import 'utils/theme.dart' as Theme;
 // import 'components/header.dart';
 // import 'components/footer.dart';
 import 'chatContent.dart';
-
-class ChatChatPage extends StatelessWidget {
+class ChatChatPage extends StatefulWidget{
+  User user;
+   ChatChatPage({this.user});
+  @override
+  _ChatChatPageState createState() => _ChatChatPageState();
+}
+class _ChatChatPageState extends State<ChatChatPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
+    return Scaffold(
+      body: Container(
+        child: Column(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -31,8 +38,10 @@ class ChatChatPage extends StatelessWidget {
             height: 10.0,
           ),
           ChatContentPage(),
+         
         ],
-      ),
-    );
+      // ),
+      )
+    ));
   }
 }
