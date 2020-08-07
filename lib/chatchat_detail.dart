@@ -79,6 +79,8 @@ class ChatChatDetail extends StatefulWidget {
 }
 
 class _ChatChatDetailState extends State<ChatChatDetail> {
+  bool isTextFiledFocus = false;
+  
   _buiderMessage(Message message, bool isMe) {
     final Column msg = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -140,7 +142,10 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
 
   _buildMessageComposer() {
     return Container(
-      height: 65,
+       constraints: BoxConstraints(
+          maxHeight: 130.0,
+          // minHeight: 64,
+        ),
       color: Colors.white,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -148,41 +153,56 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
           border: Border( top: BorderSide(width: 0.5, color: Theme.Colors.warmGray )),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            InkWell(
-              onTap: () {},
-              child: Icon(
-                Icons.camera_alt_outlined,
-                size: 35.0,
-                color: Theme.Colors.grey300,
+            Padding(
+              padding: EdgeInsets.only(bottom: 15.0),
+              child: InkWell(
+                onTap: () {},
+                child: Image(image: AssetImage('assets/images/icon/camera_icon.png', ),fit: BoxFit.contain, height: 24.0)
               ),
             ),
-            SizedBox(width: 15.0),
-            InkWell(
-              onTap: () {},
-              child: Icon(
-                Icons.attach_file,
-                size: 30.0,
-                color: Theme.Colors.grey300,
+            SizedBox(width: 20.0),
+            Padding(
+              padding: EdgeInsets.only(bottom: 15.0),
+              child: InkWell(
+                onTap: () {},
+                child: Image(image: AssetImage('assets/images/icon/attach_icon.png', ),fit: BoxFit.contain, height: 24.0)
               ),
             ),
             SizedBox(width: 20.0),
             Expanded(
-              child: TextField(
-                textCapitalization: TextCapitalization.sentences,
-                onChanged: (value) {},
-                decoration: InputDecoration.collapsed(hintText: 'Type message...')
-              )
-            ),
-            SizedBox(width: 20.0),
-            InkWell(
-              onTap: () {},
-              child: Icon(
-                Icons.send,
-                size: 30.0,
-                color: Theme.Colors.grey300,
+              child: Focus(
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 13.0),
+                  child:TextFormField(
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration.collapsed(hintText: 'Type message...'),
+                    style: TextStyle(fontFamily: 'Proxima-Nova-Regular', fontSize: 16.0),
+                    // minLines: 1,
+                    maxLines: null,
+                  ),
+                
+                ),
+                onFocusChange: (hasFocus) {
+                  setState(() {
+                    isTextFiledFocus = hasFocus;
+                  });
+                },
               ),
             ),
+            SizedBox(width: 20.0),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: InkWell(
+                onTap: () {},
+                child: Image(
+                  image: isTextFiledFocus ? AssetImage('assets/images/icon/send_icon.png'): AssetImage('assets/images/icon/microphone_icon.png'),
+                  fit: BoxFit.contain,
+                  height: 40.0
+                )
+              ),
+            )
           ]
         )
       ),
