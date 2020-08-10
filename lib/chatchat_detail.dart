@@ -146,6 +146,7 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
     return Scaffold(
       backgroundColor: Theme.Colors.purpleMain100,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Theme.Colors.purpleMain,
         automaticallyImplyLeading: false,
         leading: MaterialButton(
@@ -155,15 +156,12 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
             Navigator.of(context).pop();
           },
         ),
-        title: Center(
-          // alignment: Alignment.center,
-          child: Column(
+        title: Column(
             children: <Widget>[
               Text(widget.user.name, style: TextStyle(fontSize: 20, fontFamily: 'Proxima-Nova-Regular')),
               Text('online', style: TextStyle(fontSize: 12, fontFamily: 'Proxima-Nova-Regular')),
             ]
           ),
-        ),
         // ),
         actions: <Widget>[
           MaterialButton(

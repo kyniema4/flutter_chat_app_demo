@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'chatChat/chatChat.dart';
 import 'chatChat/chatChatHeader.dart';
+import 'chatChat/headerTest.dart';
+
 import 'chatContact/chatcontact.dart';
 import 'chatCall/chatCall.dart';
 import 'chatsetting.dart';
@@ -14,7 +16,7 @@ class TabsPage extends StatefulWidget {
 
 class _TabsPage extends State<TabsPage> {
   PageController _myPage = PageController(initialPage: 0);
-  String title;
+ 
   Color _iconColor0 = Theme.Colors.purpleMain;
   Color _iconColor1 = Theme.Colors.blue293;
   Color _iconColor2 = Theme.Colors.blue293;
@@ -26,9 +28,15 @@ class _TabsPage extends State<TabsPage> {
       body: PageView(
         controller: _myPage,
         children: <Widget>[
-          ChatContactPage(),
           Scaffold(
-            appBar: ChatChatHeader(),
+            appBar: HeaderTest(title: 'Contact', appBar: AppBar(),iconButton: Icons.add, isLeftButton: false),
+            body: ChatContactPage(),
+
+          ),
+
+          Scaffold(
+            // appBar: ChatChatHeader(),
+            appBar: HeaderTest(title: 'Chats',appBar: AppBar(), iconButton: Icons.create, isLeftButton: true),
             body: ChatChatPage(),
 
           ),
@@ -62,7 +70,7 @@ class _TabsPage extends State<TabsPage> {
 
                   setState(() {
                     _myPage.jumpToPage(0);
-                    title = 'Contacts';
+                    // title = 'Contacts';
                   });
                 },
               ),
@@ -77,7 +85,7 @@ class _TabsPage extends State<TabsPage> {
                   _iconColor3 = Theme.Colors.blue293;
                   setState(() {
                     _myPage.jumpToPage(1);
-                    title = 'Chats';
+                    // title = 'Chats';
                   });
                 },
               ),

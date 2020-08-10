@@ -5,14 +5,17 @@ class Message {
   final String time;
   final String text;
   final bool unread;
+  bool isCheck;
 
   Message({
     this.sender,
     this.time,
     this.text,
     this.unread,
+    this.isCheck
   });
 }
+
 final User currentUser = User(
   id: 0,
   name: 'Current User',
@@ -43,58 +46,67 @@ final User steven5 = User(
   name: 'Steven Swap',
   avtUrl: 'assets/images/avt_Friend2.png',
 );
-
 final User steven6 = User(
   id: 6,
   name: 'Steven Swap',
   avtUrl: 'assets/images/avt_Friend2.png',
 );
-
-
 final User steven7 = User(
   id: 7,
   name: 'Steven Swap',
   avtUrl: 'assets/images/avt_Friend2.png',
 );
 
-
 //List in chatchat_page
 List<Message> chats = [
   Message(
     sender: linda,
     time: '12:30 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ... The first line of Lorem Ipsum',
+    text: 'printing and typesetting industry',
+    isCheck: false
   ),
    Message(
      sender: steven,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    isCheck: false
+  
   ),
    Message(
      sender: steven3,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    isCheck: false
+  
   ),
    Message(
      sender: steven4,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  ),
+    isCheck: false
+
+),
    Message(
      sender: steven5,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    isCheck: false
+  
   ),
    Message(
      sender: steven6,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    isCheck: false
+  
   ),
    Message(
      sender: steven7,
     time: '12:55 AM',
     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  ),
+    isCheck: false
+
+),
 
 ];
 

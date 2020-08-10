@@ -221,7 +221,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 width: double.infinity,
                 child:  RaisedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TabsPage()));
+                    Navigator.of(context).pushAndRemoveUntil(
+                    new MaterialPageRoute(
+                      builder: (context) => TabsPage(),
+                    ),
+                    (route) => route == null
+                    );
+                    // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TabsPage()));
                   },
                   child: Text(
                     'LET\'S START',
