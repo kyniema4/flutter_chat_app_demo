@@ -40,6 +40,7 @@ class Colors {
 
 // setting
   static const blue293 = Color(0xff29353b);
+  static const blue9ff = Color(0xff0079ff);
   static const grey666 = Color(0xff666666);
   static const greyede = Color(0xffededed);
   static const grey9cd = Color(0xffc9c9cd);

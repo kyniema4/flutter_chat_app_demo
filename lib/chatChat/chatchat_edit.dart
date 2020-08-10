@@ -20,14 +20,25 @@ class _ChatChatEditPage extends State<ChatChatEditPage> {
         automaticallyImplyLeading: false,
         title: Header('Chats'),
         actions: <Widget>[
-          Container(
-            child: IconButton(
-              icon: Icon(Icons.close),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+          Padding(
+            // padding: EdgeInsets.only(bottom: 15.0),
+            child: InkWell(
+                onTap: () {},
+                child: Image(
+                    image: AssetImage(
+                      'assets/images/icon/camera_icon.png',
+                    ),
+                    fit: BoxFit.contain,
+                    height: 24.0)),
           ),
+          // Container(
+          //   child: IconButton(
+          //     icon: Icon(Icons.close),
+          //     onPressed: () {
+          //       Navigator.pop(context);
+          //     },
+          //   ),
+          // ),
         ],
       ),
       body: ListView(

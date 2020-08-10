@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'chatChat/chatChat.dart';
-import 'chatChat/chatChatHeader.dart';
-import 'chatChat/headerTest.dart';
+// import 'chatChat/chatChatHeader.dart';
+// import 'chatChat/headerTest.dart';
 
-import 'chatContact/chatcontact.dart';
+import 'chatcontact.dart';
 import 'chatCall/chatCall.dart';
 import 'chatsetting.dart';
 
@@ -16,7 +16,7 @@ class TabsPage extends StatefulWidget {
 
 class _TabsPage extends State<TabsPage> {
   PageController _myPage = PageController(initialPage: 0);
- 
+
   Color _iconColor0 = Theme.Colors.purpleMain;
   Color _iconColor1 = Theme.Colors.blue293;
   Color _iconColor2 = Theme.Colors.blue293;
@@ -29,16 +29,13 @@ class _TabsPage extends State<TabsPage> {
         controller: _myPage,
         children: <Widget>[
           Scaffold(
-            appBar: HeaderTest(title: 'Contact', appBar: AppBar(),iconButton: Icons.add, isLeftButton: false),
+            // appBar: HeaderTest(title: 'Contact', appBar: AppBar(),iconButton: Icons.add, isLeftButton: false),
             body: ChatContactPage(),
-
           ),
-
           Scaffold(
             // appBar: ChatChatHeader(),
-            appBar: HeaderTest(title: 'Chats',appBar: AppBar(), iconButton: Icons.create, isLeftButton: true),
+            // appBar: HeaderTest(title: 'Chats',appBar: AppBar(), iconButton: Icons.create, isLeftButton: true),
             body: ChatChatPage(),
-
           ),
           Container(
             child: ChatCall(),

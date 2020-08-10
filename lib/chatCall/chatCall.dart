@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-// import 'utils/theme.dart' as Theme;
+import '../utils/theme.dart' as Theme;
+import '../components/search.dart';
 // import '../components/header.dart';
 
 class ChatCall extends StatefulWidget {
@@ -10,39 +11,101 @@ class ChatCall extends StatefulWidget {
 
 class _ChatCall extends State<ChatCall> {
   final Map<int, Widget> logoWidgets = const <int, Widget>{
-    0: Text('Logo 1'),
-    1: Text('Logo 2'),
+    0: Text('All',
+        style: TextStyle(fontSize: 14.0, fontFamily: 'Proxima-Nova-Regular')),
+    1: Text('Missed',
+        style: TextStyle(fontSize: 14.0, fontFamily: 'Proxima-Nova-Regular')),
   };
 
   final Map<int, Widget> icons = <int, Widget>{
     0: Container(
-      decoration: new BoxDecoration(color: Colors.red),
-      height: 70.0,
-      child: Row(
-        children: <Widget>[
-          Expanded(
-              flex: 5,
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    Text('dfsg'),
-                    Text(
-                      'gfhfthf asbefuef f ewrfe sfewhyf ew',
+      child: Column(children: <Widget>[
+        Container(
+          margin: new EdgeInsets.symmetric(vertical: 5.0),
+          height: 70,
+          child: ListTile(
+            title: Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 6,
+                      child: Flex(
+                        direction: Axis.vertical,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Arla Waing',
+                              style: TextStyle(
+                                  color: Theme.Colors.grey343,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Proxima-Nova')),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('mobile',
+                              style: TextStyle(
+                                  color: Theme.Colors.grey666,
+                                  fontSize: 14.0,
+                                  fontFamily: 'Proxima-Nova-Regular')),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Text('4/8/17'),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: InkWell(
+                          onTap: () {},
+                          child: Image(
+                            image: AssetImage(
+                              'assets/images/icon/icon_info.png',
+                            ),
+                            // fit: BoxFit.contain,
+                            height: 27,
+                            width: 27,
+                          )),
                     ),
                   ],
-                ),
-              )),
-          Expanded(
-            flex: 1,
-            child: Text('desfh'),
+                )),
           ),
-          Expanded(
-            flex: 1,
-            child: Text('dfef'),
-          ),
-        ],
-      ),
+        ),
+      ]),
     ),
+    // Container(
+    //   height: 70.0,
+    //   child: Row(
+    //     children: <Widget>[
+    //       Expanded(
+    //           flex: 5,
+    //           child: Container(
+    //             child: Column(
+    //               children: <Widget>[
+    //                 Text('Arla Waing'),
+    //                 Text(
+    //                   'mobile',
+    //                 ),
+    //               ],
+    //             ),
+    //           )),
+    //       Expanded(
+    //         flex: 1,
+    //         child: Text('desfh'),
+    //       ),
+    //       Expanded(
+    //         flex: 1,
+    //         child: Text('dfef'),
+    //       ),
+    //     ],
+    //   ),
+    // ),
     1: ListTile(
       leading: FlutterLogo(size: 72.0),
       title: Text('Three-line ListTile'),
@@ -59,67 +122,49 @@ class _ChatCall extends State<ChatCall> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: Theme.Colors.purpleMain,
+          centerTitle: true,
           title: Stack(
             children: <Widget>[
               SizedBox(
-                width: 200.0,
-                child: CupertinoSegmentedControl<int>(
-                  borderColor: Colors.grey,
-                  selectedColor: Colors.redAccent,
-                  unselectedColor: Colors.white,
-                  children: logoWidgets,
-                  onValueChanged: (int val) {
-                    setState(() {
-                      sharedValue = val;
-                    });
-                  },
-                  groupValue: sharedValue,
-                ),
-              ),
+                  width: 200.0,
+                  child: CupertinoSegmentedControl<int>(
+                    borderColor: Theme.Colors.transparent,
+                    selectedColor: Theme.Colors.blue9ff,
+                    unselectedColor: Theme.Colors.white,
+                    children: logoWidgets,
+                    onValueChanged: (int val) {
+                      setState(() {
+                        sharedValue = val;
+                      });
+                    },
+                    groupValue: sharedValue,
+                  )),
             ],
           ),
           actions: <Widget>[
             Container(
-              child: IconButton(
-                icon: Icon(Icons.phone),
-                onPressed: () {},
-              ),
-            ),
+              // decoration: new BoxDecoration(color: Colors.red),
+              margin: EdgeInsets.only(right: 22),
+              child: InkWell(
+                  onTap: () {},
+                  child: Image(
+                    image: AssetImage(
+                      'assets/images/icon/phone_white.png',
+                    ),
+                    // fit: BoxFit.contain,
+                    height: 27,
+                    width: 27,
+                  )),
+            )
           ],
         ),
-        body: Column(
+        body: ListView(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: "Search",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)))),
-              ),
-            ),
-            // Row(
-            //   children: <Widget>[
-            //     Expanded(
-            //         flex: 5,
-            //         child: Column(
-            //           children: <Widget>[
-            //             Text('dehfref'),
-            //             Text('dehfref'),
-            //           ],
-            //         )),
-            //     Expanded(flex: 1, child: Text('dshfds')),
-            //     Expanded(
-            //       flex: 1,
-            //       child: Icon(Icons.info_outline),
-            //     ),
-            //   ],
-            // ),
-
+            Search(),
             Column(
                 children: List.generate(
-              2,
+              1,
               (index) => icons[sharedValue],
             ))
           ],
