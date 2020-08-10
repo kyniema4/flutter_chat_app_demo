@@ -71,6 +71,10 @@ flutter:
   - assets/images/icon/icon_close.png
   - assets/images/icon/icon_info.png
   - assets/images/icon/new_chat.png
+  - assets/images/contact_avt1.png
+  - assets/images/contact_avt2.png
+  - assets/images/contact_avt3.png
+  - assets/images/contact_avt4.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
