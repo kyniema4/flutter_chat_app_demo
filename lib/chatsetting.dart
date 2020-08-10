@@ -48,7 +48,7 @@ class ChatSettingPage extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 14.0,
-                            fontFamily: 'Proxima-Nova'),
+                            fontFamily: 'Proxima-Nova-Regular'),
                       ),
                     ),
                   ],
