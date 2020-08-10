@@ -1,10 +1,7 @@
 import 'package:chat/chatChat/chatContent.dart';
 import 'package:flutter/material.dart';
 import '../models/user_model.dart';
-
-// import 'utils/theme.dart' as Theme;
-// import 'components/header.dart';
-// import 'components/footer.dart';
+import 'chatChatHeader.dart';
 import 'chatContent.dart';
 class ChatChatPage extends StatefulWidget{
   User user;
@@ -16,6 +13,7 @@ class _ChatChatPageState extends State<ChatChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: ChatChatHeader(),
       body: Container(
         child: Column(
         children: <Widget>[

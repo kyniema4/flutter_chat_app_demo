@@ -33,81 +33,52 @@ final User steven = User(
 );
 final User steven3 = User(
   id: 3,
-  name: 'Steven Swap',
-  avtUrl: 'assets/images/avt_Friend2.png',
+  name: 'Carza Helden',
+  avtUrl: 'assets/images/avt_Friend3.png',
 );
 final User steven4 = User(
   id: 4,
-  name: 'Steven Swap',
-  avtUrl: 'assets/images/avt_Friend2.png',
+  name: 'Richard Steve',
+  avtUrl: 'assets/images/avt_Friend4.png',
 );
 final User steven5 = User(
   id: 5,
-  name: 'Steven Swap',
-  avtUrl: 'assets/images/avt_Friend2.png',
-);
-final User steven6 = User(
-  id: 6,
-  name: 'Steven Swap',
-  avtUrl: 'assets/images/avt_Friend2.png',
-);
-final User steven7 = User(
-  id: 7,
-  name: 'Steven Swap',
-  avtUrl: 'assets/images/avt_Friend2.png',
+  name: 'Natasha Chaw',
+  avtUrl: 'assets/images/avt_Friend5.png',
 );
 
 //List in chatchat_page
 List<Message> chats = [
   Message(
     sender: linda,
-    time: '12:30 AM',
-    text: 'printing and typesetting industry',
+    time: '12:10 AM',
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been...',
     isCheck: false
   ),
-   Message(
-     sender: steven,
+  Message(
+    sender: steven,
     time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting...',
     isCheck: false
-  
   ),
-   Message(
+  Message(
      sender: steven3,
-    time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: '3:14 PM',
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting...',
     isCheck: false
-  
   ),
-   Message(
+  Message(
      sender: steven4,
-    time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: '4:25 PM',
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting...',
     isCheck: false
-
 ),
-   Message(
-     sender: steven5,
-    time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  Message(
+    sender: steven5,
+    time: '5:55 PM',
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting...',
     isCheck: false
-  
   ),
-   Message(
-     sender: steven6,
-    time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    isCheck: false
-  
-  ),
-   Message(
-     sender: steven7,
-    time: '12:55 AM',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    isCheck: false
-
-),
-
 ];
 
 //List in chatchat_detail page
@@ -118,11 +89,11 @@ List<Message> messages = [
   ),
    Message(
     sender: linda,
-    text: 'Good idea',
+    text: 'good idea',
   ),
    Message(
     sender: currentUser,
-    text: 'Let us drink coffee together',
+    text: 'let us drink coffee together ^_^',
   ),
    Message(
     sender: currentUser,
@@ -130,11 +101,11 @@ List<Message> messages = [
   ),
  Message(
     sender: linda,
-    text: 'I\'m work as developer',
+    text: 'I\'m work as designer',
   ),
  Message(
     sender: linda,
-    text: 'Yes',
+    text: 'yes',
   ),
   Message(
     sender: currentUser,
@@ -142,11 +113,6 @@ List<Message> messages = [
   ),
  Message(
     sender: linda,
-    text: 'Hey, How are you?',
+    text: 'Hay, How are you ? :)',
   ),
- Message(
-    sender: linda,
-    text: 'Hello:3',
-  ),
-
 ];

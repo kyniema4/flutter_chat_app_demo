@@ -74,7 +74,7 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
 
   _buildMessageComposer() {
     return Container(
-       constraints: BoxConstraints(
+      constraints: BoxConstraints(
           maxHeight: 130.0,
           // minHeight: 64,
         ),

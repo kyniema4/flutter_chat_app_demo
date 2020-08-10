@@ -95,26 +95,16 @@ class _ChatContentPageState extends State<ChatContentPage> {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => ChatChatDetail(user: chat.sender)));
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                margin: EdgeInsets.only(top: 0.0, left: 20.0, right: 20.0, bottom: 18.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircularCheckBox(
-                      value: chat.isCheck,
-                      checkColor: Colors.white,
-                      activeColor: Theme.Colors.purpleMain,
-                      inactiveColor: Theme.Colors.purpleMain400,
-                      disabledColor: Colors.grey, 
-                      onChanged: (val) => setState(() {
-                        chat.isCheck = !chat.isCheck;
-                        }
-                      ) ),
-                    
-                    CircleAvatar(backgroundImage:AssetImage(chat.sender.avtUrl, ),radius: 35.0, ),
-                    SizedBox(width: 20.0),
+                    CircleAvatar(backgroundImage:AssetImage(chat.sender.avtUrl, ),radius: 40.0, ),
+                    SizedBox(width: 10.0),
                     Expanded(
                       child: Container(
+                        padding: EdgeInsets.only(bottom: 20.0),
                         decoration: BoxDecoration(
                           border:  Border(bottom: BorderSide(width: 0.5,color: Theme.Colors.warmGray),)
                         ),
@@ -128,7 +118,7 @@ class _ChatContentPageState extends State<ChatContentPage> {
                                   chat.sender.name,
                                   style : TextStyle(
                                     fontFamily: 'Proxima-Nova',
-                                    color: Theme.Colors.grey400, fontSize: 17
+                                    color: Theme.Colors.grey400, fontSize: 16
                                     )
                                   ),
                                 Text(
@@ -142,14 +132,14 @@ class _ChatContentPageState extends State<ChatContentPage> {
                             ),
                             SizedBox(height: 8.0),
                             Container(
-                              padding: EdgeInsets.only(bottom: 15.0),
+                              // padding: EdgeInsets.symmetric(vertical: 10.0),
                               child: Text(
                                 chat.text,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                                // maxLines: 2,
+                                // overflow: TextOverflow.ellipsis,
                                 style : TextStyle(
                                   fontFamily: 'Proxima-Nova-Regular',
-                                  color: Theme.Colors.grey350, fontSize: 16
+                                  color: Theme.Colors.grey350, fontSize: 15
                                 )
                               ),
                             )

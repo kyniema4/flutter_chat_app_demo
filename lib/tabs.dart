@@ -32,10 +32,10 @@ class _TabsPage extends State<TabsPage> {
             // appBar: HeaderTest(title: 'Contact', appBar: AppBar(),iconButton: Icons.add, isLeftButton: false),
             body: ChatContactPage(),
           ),
-          Scaffold(
+          Container(
             // appBar: ChatChatHeader(),
             // appBar: HeaderTest(title: 'Chats',appBar: AppBar(), iconButton: Icons.create, isLeftButton: true),
-            body: ChatChatPage(),
+            child: ChatChatPage(),
           ),
           Container(
             child: ChatCall(),

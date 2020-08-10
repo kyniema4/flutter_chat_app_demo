@@ -34,9 +34,12 @@ class Colors {
   static const purpleMain = Color(0xff6e5694);
   static const purpleMain400 = Color(0xff9579c1);
   static const purpleMain100 = Color(0xfff9fafc);
+  static const grey100 = Color(0xfff8f8f8);
   static const grey300 = Color(0xff909295);
   static const grey350 = Color(0xff666666);
   static const grey400 = Color(0xff434343);
+  static const red500 = Color(0xffe32f21);
+
 
 // setting
   static const blue293 = Color(0xff29353b);

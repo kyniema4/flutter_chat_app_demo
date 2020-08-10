@@ -1,30 +1,44 @@
+import 'package:chat/chatChat/chatchat_edit.dart';
 import 'package:flutter/material.dart';
-// import 'utils/theme.dart' as Theme;
-import '../components/header.dart';
-
+import '../utils/theme.dart' as Theme;
+// import '../components/header.dart';
 class ChatChatHeader extends AppBar {
-  ChatChatHeader()
-      : super(
-          // iconTheme: IconThemeData(
-          //   color: Colors.black, //change your color here
-          // ),
-          // backgroundColor: Colors.white,
-          leading: FlatButton(
-            padding: EdgeInsets.all(8.0),
-            textColor: Colors.white,
-            child: const Text('Edit'),
+      double _kLeadingWidth = 60;
+
+  ChatChatHeader(): super(
+    centerTitle: true,
+    automaticallyImplyLeading: false,
+    // leading: FlatButton(
+    //   padding: EdgeInsets.symmetric(horizontal: 10.0),
+    //   textColor: Colors.white,
+    //   child: const Text('Edit', style: TextStyle(fontSize: 16, fontFamily: 'Proxima-Nova-Regular')),
+    //   onPressed: () {},
+    // ),
+    leading: Builder(builder: (BuildContext context) {
+        
+      return FlatButton(
+        padding: EdgeInsets.all(0),
+        textColor: Colors.white,
+        child: const Text('Edit', style: TextStyle(fontSize: 16, fontFamily: 'Proxima-Nova-Regular')),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ChatChatEditPage()));
+        },
+      );
+    }),
+    title: Text('Chats', style: TextStyle(fontSize: 20, fontFamily: 'Proxima-Nova')),
+    backgroundColor: Theme.Colors.purpleMain,
+    actions: <Widget>[
+        Container(
+          child: MaterialButton(
+            minWidth: 50,
+            padding: EdgeInsets.symmetric(horizontal: 20.0,),
+            child: Image(image: AssetImage('assets/images/icon/new_chat.png'),width: 28, fit: BoxFit.contain),
             onPressed: () {},
           ),
-          title: Header('Chats'),
-          // elevation: 0.0,
-          // automaticallyImplyLeading: false,
-          actions: <Widget>[
-            Container(
-              child: IconButton(
-                icon: Icon(Icons.create),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        );
-}
+          //  child: CircleAvatar(
+          //     backgroundColor: Theme.Colors.transparent,
+          //     backgroundImage: AssetImage('assets/images/icon/new_chat.png')
+          //   )
+        ),
+      ],
+  );}
