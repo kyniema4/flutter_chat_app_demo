@@ -72,8 +72,7 @@ class ChatSettingPage extends StatelessWidget {
                   Container(
                     decoration: new BoxDecoration(
                       border: Border(
-                        bottom:
-                            BorderSide(width: 1, color: Theme.Colors.grey666),
+                        bottom: borderList,
                       ),
                     ),
                     child: ListTile(
@@ -92,8 +91,7 @@ class ChatSettingPage extends StatelessWidget {
                   Container(
                     decoration: new BoxDecoration(
                       border: Border(
-                        bottom:
-                            BorderSide(width: 1, color: Theme.Colors.grey666),
+                        bottom: borderList,
                       ),
                     ),
                     child: ListTile(
@@ -110,10 +108,7 @@ class ChatSettingPage extends StatelessWidget {
                   ),
                   Container(
                     decoration: new BoxDecoration(
-                      border: Border(
-                        bottom:
-                            BorderSide(width: 1, color: Theme.Colors.grey666),
-                      ),
+                      border: Border(bottom: borderList),
                     ),
                     child: ListTile(
                       contentPadding: EdgeInsets.only(left: 0.0, right: 20),

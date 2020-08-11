@@ -3,6 +3,7 @@ import 'components/header.dart';
 import 'components/search.dart';
 import 'utils/theme.dart' as Theme;
 import 'models/contact_model.dart';
+import 'utils/style.dart';
 
 class ChatContactPage extends StatelessWidget {
   @override
@@ -117,8 +118,7 @@ class ChatContactPage extends StatelessWidget {
                       margin: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                         border: Border(
-                          bottom:
-                              BorderSide(width: 1, color: Theme.Colors.grey666),
+                          bottom: borderList,
                         ),
                       ),
                       child: Flex(
@@ -169,8 +169,7 @@ class ChatContactPage extends StatelessWidget {
                             margin: EdgeInsets.only(left: 10),
                             decoration: BoxDecoration(
                               border: Border(
-                                bottom: BorderSide(
-                                    width: 1, color: Theme.Colors.grey666),
+                                bottom: borderList,
                               ),
                             ),
                             child: Flex(
