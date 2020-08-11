@@ -1,8 +1,7 @@
-import 'package:chat/chatChat/chatContent.dart';
 import 'package:flutter/material.dart';
 import '../models/chat_model.dart';
 import '../utils/theme.dart' as Theme;
-import 'chatContent.dart';
+import '../utils/style.dart';
 import 'package:circular_check_box/circular_check_box.dart';
 
 class ChatChatEditPage extends StatefulWidget{
@@ -30,19 +29,7 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
                 Navigator.of(context).pop();
               },
             ),
-            //  child: CircleAvatar(
-            //     backgroundColor: Theme.Colors.transparent,
-            //     backgroundImage: AssetImage('assets/images/icon/new_chat.png')
-            //   )
           ),
-          // Container(
-          //   child: IconButton(
-          //     icon: Icon(Icons.close),
-          //     onPressed: () {
-          //       Navigator.pop(context);
-          //     },
-          //   ),
-          // ),
         ],
       ),
       body: Container(
@@ -53,7 +40,7 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
           itemBuilder:(BuildContext context, int index) {
             final Message chat = chats[index];
             return Container(
-              margin: EdgeInsets.only(top: 0.0, left: 5.0, right: 20.0, bottom: 18.0),
+              margin: listItemEditStyle,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,9 +63,9 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
                   SizedBox(width: 10.0),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.only(bottom: 20.0),
+                      padding: marginBottom20,
                       decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(width: 0.5,color: Theme.Colors.warmGray))
+                         border: Border( bottom: borderList),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,17 +75,11 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
                             children: <Widget>[
                               Text(
                                 chat.sender.name,
-                                style : TextStyle(
-                                  fontFamily: 'Proxima-Nova',
-                                  color: Theme.Colors.grey400, fontSize: 16
-                                  )
-                                ),
+                                style: nameUserList
+                              ),
                               Text(
                                 chat.time,
-                                style : TextStyle(
-                                  fontFamily: 'Proxima-Nova-Regular',
-                                  color: Theme.Colors.grey350, fontSize: 14
-                                  )
+                                style : timeChat
                               ),
                             ]
                           ),
@@ -109,10 +90,7 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
                               chat.text,
                               // maxLines: 3,
                               // overflow: TextOverflow.ellipsis,
-                              style : TextStyle(
-                                fontFamily: 'Proxima-Nova-Regular',
-                                color: Theme.Colors.grey350, fontSize: 15
-                              )
+                              style: textChatList
                             ),
                           )
                         ]
@@ -125,26 +103,18 @@ class _ChatChatEditPageState extends State<ChatChatEditPage> {
           }
         ),
     ),
-
-    bottomNavigationBar: BottomAppBar(
-      // decoration: new BoxDecoration(),
-
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
-        decoration: BoxDecoration(
-          color: Theme.Colors.grey100,
-          border: Border( top: BorderSide(width: 0.5, color: Theme.Colors.warmGray )),
-        ),
-        child: RaisedButton(
-          color: Theme.Colors.red500,
-          padding: EdgeInsets.symmetric(vertical: 12.0,),
-          child: Text('DELETE', style: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'Proxima-Nova')),
-          onPressed: () {},
-        ),
-      )
-
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
+          decoration: deleteBarStyle,
+          child: RaisedButton(
+            color: Theme.Colors.red500,
+            padding: EdgeInsets.symmetric(vertical: 12.0,),
+            child: Text('DELETE', style: deleteButtonStyle),
+            onPressed: () {},
+          ),
+        )
       ),
-
     );
   }
 }

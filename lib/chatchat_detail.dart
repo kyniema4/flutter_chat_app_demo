@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utils/theme.dart' as Theme;
+import 'utils/style.dart';
 import 'models/chat_model.dart';
 import 'models/user_model.dart';
 
@@ -24,39 +25,20 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
           constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
           decoration: new BoxDecoration(
             color: isMe ? Theme.Colors.purpleMain : Colors.white,
-            borderRadius: isMe  ? 
-                  BorderRadius.only(
-                    topLeft: Radius.circular(6.0),
-                    topRight: Radius.circular(6.0),
-                    bottomLeft: Radius.circular(6.0),
-
-                  ) 
-                : BorderRadius.only(
-                    topLeft: Radius.circular(6.0),
-                    topRight: Radius.circular(6.0),
-                    bottomRight: Radius.circular(6.0),
-                  ),
-            boxShadow: [
-              BoxShadow(
-                color: Theme.Colors.purpleMain.withOpacity(0.2),
-                spreadRadius: 1,
-                blurRadius: 5,
-                offset: Offset(0, 3), // changes position of shadow
-              ),
-            ],
+            borderRadius: isMe  ? isMeBorderRadius6 : isFriendBorderRadius6,
+            boxShadow: [messageBoxShadow],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                Text(
-                  message.text,
-                  style: TextStyle(
-                    color: isMe ? Colors.white : Color(0xff666666),
-                    fontSize: 16.0,
-                    fontFamily: 'Proxima-Nova-Regular'
-                  ),
+              Text(
+                message.text,
+                style: TextStyle(
+                  color: isMe ? Colors.white : Color(0xff666666),
+                  fontSize: 16.0,
+                  fontFamily: 'Proxima-Nova-Regular'
                 ),
-              
+              ),
             ],
           ),
         )
@@ -75,20 +57,20 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
   _buildMessageComposer() {
     return Container(
       constraints: BoxConstraints(
-          maxHeight: 130.0,
+        maxHeight: 130.0,
           // minHeight: 64,
         ),
       color: Colors.white,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         decoration: BoxDecoration(
-          border: Border( top: BorderSide(width: 0.5, color: Theme.Colors.warmGray )),
+          border: Border( top: borderList),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(bottom: 15.0),
+              padding: paddingBottom15,
               child: InkWell(
                 onTap: () {},
                 child: Image(image: AssetImage('assets/images/icon/camera_icon.png', ),fit: BoxFit.contain, height: 24.0)
@@ -96,7 +78,7 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
             ),
             SizedBox(width: 20.0),
             Padding(
-              padding: EdgeInsets.only(bottom: 15.0),
+              padding: paddingBottom15,
               child: InkWell(
                 onTap: () {},
                 child: Image(image: AssetImage('assets/images/icon/attach_icon.png', ),fit: BoxFit.contain, height: 24.0)
@@ -107,10 +89,10 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
               child: Focus(
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 13.0),
-                  child:TextFormField(
+                  child: TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration.collapsed(hintText: 'Type message...'),
-                    style: TextStyle(fontFamily: 'Proxima-Nova-Regular', fontSize: 16.0),
+                    style: textInputStyle,
                     // minLines: 1,
                     maxLines: null,
                   ),
@@ -158,8 +140,8 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
         ),
         title: Column(
             children: <Widget>[
-              Text(widget.user.name, style: TextStyle(fontSize: 20, fontFamily: 'Proxima-Nova-Regular')),
-              Text('online', style: TextStyle(fontSize: 12, fontFamily: 'Proxima-Nova-Regular')),
+              Text(widget.user.name, style: titleUserMessage),
+              Text('online', style: textOnlineStyle),
             ]
           ),
         // ),
