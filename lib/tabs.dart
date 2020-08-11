@@ -22,6 +22,12 @@ class _TabsPage extends State<TabsPage> {
   Color _iconColor2 = Theme.Colors.blue293;
   Color _iconColor3 = Theme.Colors.blue293;
 
+  AssetImage _image0 = AssetImage('assets/images/icon/user_activetab.png');
+  AssetImage _image1 = AssetImage('assets/images/icon/chat_tab.png');
+  AssetImage _image2 = AssetImage('assets/images/icon/phone_tab.png');
+  AssetImage _image3 = AssetImage('assets/images/icon/setting_tab.png');
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +51,7 @@ class _TabsPage extends State<TabsPage> {
           )
         ],
         physics:
-            NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
+          NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
@@ -55,65 +61,70 @@ class _TabsPage extends State<TabsPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(
-                iconSize: 28.0,
-                icon: Icon(Icons.perm_identity),
-                color: _iconColor0,
+              MaterialButton(
+                minWidth: 50,
+                padding: EdgeInsets.symmetric(horizontal: 20.0,),
+                child: Image(image: _image0 ,width: 28, fit: BoxFit.contain),
                 onPressed: () {
-                  _iconColor0 = Theme.Colors.purpleMain;
-                  _iconColor1 = Theme.Colors.blue293;
-                  _iconColor2 = Theme.Colors.blue293;
-                  _iconColor3 = Theme.Colors.blue293;
-
-                  setState(() {
-                    _myPage.jumpToPage(0);
+                  _image0 = AssetImage('assets/images/icon/user_activetab.png');
+                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
+                   
+                    setState(() {
+                     _myPage.jumpToPage(0);
                     // title = 'Contacts';
                   });
                 },
               ),
-              IconButton(
-                icon: Icon(Icons.chat_bubble_outline),
-                iconSize: 28.0,
-                color: _iconColor1,
+              MaterialButton(
+                minWidth: 50,
+                padding: EdgeInsets.symmetric(horizontal: 20.0,),
+                child: Image(image: _image1 ,width: 28, fit: BoxFit.contain),
                 onPressed: () {
-                  _iconColor1 = Theme.Colors.purpleMain;
-                  _iconColor0 = Theme.Colors.blue293;
-                  _iconColor2 = Theme.Colors.blue293;
-                  _iconColor3 = Theme.Colors.blue293;
-                  setState(() {
-                    _myPage.jumpToPage(1);
-                    // title = 'Chats';
+                  _image0 = AssetImage('assets/images/icon/user_tab.png');
+                  _image1 = AssetImage('assets/images/icon/chat_activetab.png');
+                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
+                   
+                    setState(() {
+                     _myPage.jumpToPage(1);
+                    // title = 'Contacts';
                   });
                 },
               ),
-              IconButton(
-                icon: Icon(Icons.local_phone),
-                iconSize: 28.0,
-                color: _iconColor2,
-                onPressed: () {
-                  setState(() {
-                    _myPage.jumpToPage(2);
-                    _iconColor2 = Theme.Colors.purpleMain;
-                    _iconColor0 = Theme.Colors.blue293;
-                    _iconColor1 = Theme.Colors.blue293;
-                    _iconColor3 = Theme.Colors.blue293;
-                  });
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.settings),
-                iconSize: 28.0,
-                color: _iconColor3,
-                onPressed: () {
-                  setState(() {
-                    _myPage.jumpToPage(3);
-                    _iconColor3 = Theme.Colors.purpleMain;
-                    _iconColor0 = Theme.Colors.blue293;
-                    _iconColor1 = Theme.Colors.blue293;
-                    _iconColor2 = Theme.Colors.blue293;
-                  });
-                },
-              )
+              MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0,),
+                  child: Image(image: _image2 ,width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 = AssetImage('assets/images/icon/user_tab.png');
+                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                    _image2 = AssetImage('assets/images/icon/phone_activetab.png');
+                    _image3 = AssetImage('assets/images/icon/setting_tab.png');
+                    
+                      setState(() {
+                      _myPage.jumpToPage(2);
+                      // title = 'Contacts';
+                    });
+                  },
+                ),
+              MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0,),
+                  child: Image(image: _image3 ,width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 = AssetImage('assets/images/icon/user_tab.png');
+                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                    _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                    _image3 = AssetImage('assets/images/icon/setting_activetab.png');
+                    
+                      setState(() {
+                      _myPage.jumpToPage(3);
+                      // title = 'Contacts';
+                    });
+                  },
+                ),
             ],
           ),
         ),
