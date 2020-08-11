@@ -4,7 +4,7 @@ import 'chatChat/chatChat.dart';
 // import 'chatChat/headerTest.dart';
 
 import 'chatcontact.dart';
-import 'chatCall/chatCall.dart';
+import 'chatCall.dart';
 import 'chatsetting.dart';
 
 import 'utils/theme.dart' as Theme;
@@ -26,7 +26,6 @@ class _TabsPage extends State<TabsPage> {
   AssetImage _image1 = AssetImage('assets/images/icon/chat_tab.png');
   AssetImage _image2 = AssetImage('assets/images/icon/phone_tab.png');
   AssetImage _image3 = AssetImage('assets/images/icon/setting_tab.png');
-  
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class _TabsPage extends State<TabsPage> {
           )
         ],
         physics:
-          NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
+            NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
@@ -64,68 +63,78 @@ class _TabsPage extends State<TabsPage> {
             children: [
               MaterialButton(
                 minWidth: 50,
-                padding: EdgeInsets.symmetric(horizontal: 20.0,),
-                child: Image(image: _image0 ,width: 28, fit: BoxFit.contain),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
+                child: Image(image: _image0, width: 28, fit: BoxFit.contain),
                 onPressed: () {
                   _image0 = AssetImage('assets/images/icon/user_activetab.png');
                   _image1 = AssetImage('assets/images/icon/chat_tab.png');
                   _image2 = AssetImage('assets/images/icon/phone_tab.png');
                   _image3 = AssetImage('assets/images/icon/setting_tab.png');
-                   
-                    setState(() {
-                     _myPage.jumpToPage(0);
+
+                  setState(() {
+                    _myPage.jumpToPage(0);
                     // title = 'Contacts';
                   });
                 },
               ),
               MaterialButton(
                 minWidth: 50,
-                padding: EdgeInsets.symmetric(horizontal: 20.0,),
-                child: Image(image: _image1 ,width: 28, fit: BoxFit.contain),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
+                child: Image(image: _image1, width: 28, fit: BoxFit.contain),
                 onPressed: () {
                   _image0 = AssetImage('assets/images/icon/user_tab.png');
                   _image1 = AssetImage('assets/images/icon/chat_activetab.png');
                   _image2 = AssetImage('assets/images/icon/phone_tab.png');
                   _image3 = AssetImage('assets/images/icon/setting_tab.png');
-                   
-                    setState(() {
-                     _myPage.jumpToPage(1);
+
+                  setState(() {
+                    _myPage.jumpToPage(1);
                     // title = 'Contacts';
                   });
                 },
               ),
               MaterialButton(
-                  minWidth: 50,
-                  padding: EdgeInsets.symmetric(horizontal: 20.0,),
-                  child: Image(image: _image2 ,width: 28, fit: BoxFit.contain),
-                  onPressed: () {
-                    _image0 = AssetImage('assets/images/icon/user_tab.png');
-                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
-                    _image2 = AssetImage('assets/images/icon/phone_activetab.png');
-                    _image3 = AssetImage('assets/images/icon/setting_tab.png');
-                    
-                      setState(() {
-                      _myPage.jumpToPage(2);
-                      // title = 'Contacts';
-                    });
-                  },
+                minWidth: 50,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
                 ),
+                child: Image(image: _image2, width: 28, fit: BoxFit.contain),
+                onPressed: () {
+                  _image0 = AssetImage('assets/images/icon/user_tab.png');
+                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                  _image2 =
+                      AssetImage('assets/images/icon/phone_activetab.png');
+                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
+
+                  setState(() {
+                    _myPage.jumpToPage(2);
+                    // title = 'Contacts';
+                  });
+                },
+              ),
               MaterialButton(
-                  minWidth: 50,
-                  padding: EdgeInsets.symmetric(horizontal: 20.0,),
-                  child: Image(image: _image3 ,width: 28, fit: BoxFit.contain),
-                  onPressed: () {
-                    _image0 = AssetImage('assets/images/icon/user_tab.png');
-                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
-                    _image2 = AssetImage('assets/images/icon/phone_tab.png');
-                    _image3 = AssetImage('assets/images/icon/setting_activetab.png');
-                    
-                      setState(() {
-                      _myPage.jumpToPage(3);
-                      // title = 'Contacts';
-                    });
-                  },
+                minWidth: 50,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
                 ),
+                child: Image(image: _image3, width: 28, fit: BoxFit.contain),
+                onPressed: () {
+                  _image0 = AssetImage('assets/images/icon/user_tab.png');
+                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                  _image3 =
+                      AssetImage('assets/images/icon/setting_activetab.png');
+
+                  setState(() {
+                    _myPage.jumpToPage(3);
+                    // title = 'Contacts';
+                  });
+                },
+              ),
             ],
           ),
         ),
