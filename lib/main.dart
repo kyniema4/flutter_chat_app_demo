@@ -1,5 +1,6 @@
+import 'package:chat/tabs.dart';
 import 'package:flutter/material.dart';
-import './tabs.dart';
+import 'onboarding1.dart';
 import 'chatChat/chatChat.dart';
 import 'chatChat/chatchat_edit.dart';
 import 'chatchat_detail.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         // accentColor: Colors.deepPurple,
       ),
       routes: {
-        '/': (BuildContext context) => TabsPage(),
+        '/': (BuildContext context) => OnBoardingPage(),
+        '/tabs': (BuildContext context) => TabsPage(),
         '/chatchat': (BuildContext context) => ChatChatPage(),
         '/chatchat_edit': (BuildContext context) => ChatChatEditPage(),
         '/chatchatDetail': (BuildContext context) => ChatChatDetail(),

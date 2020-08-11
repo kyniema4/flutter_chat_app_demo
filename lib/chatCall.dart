@@ -96,12 +96,81 @@ class _ChatCall extends State<ChatCall> {
           ),
       ]),
     ),
-    1: ListTile(
-      leading: FlutterLogo(size: 72.0),
-      title: Text('Three-line ListTile'),
-      subtitle: Text('A sufficiently long subtitle warrants three lines.'),
-      trailing: Icon(Icons.more_vert),
-      isThreeLine: true,
+    1: Container(
+      child: Column(children: <Widget>[
+        for (var call in calls)
+          call.missedCall == true
+              ? Container(
+                  decoration: BoxDecoration(
+                    // color: Colors.red,
+                    border: Border(
+                      bottom: borderList,
+                    ),
+                  ),
+                  margin: EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(right: 20),
+                  height: 69,
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
+                    title: Container(
+                        child: Row(
+                      children: [
+                        Expanded(
+                          flex: 6,
+                          child: Flex(
+                            direction: Axis.vertical,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(call.name,
+                                  style: TextStyle(
+                                      color: Theme.Colors.red500,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Proxima-Nova')),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(call.type,
+                                  style: TextStyle(
+                                      color: Theme.Colors.grey666,
+                                      fontSize: 14.0,
+                                      fontFamily: 'Proxima-Nova-Regular')),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                            flex: 2,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  // color: Colors.red,
+                                  ),
+                              child: Text(call.date,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Theme.Colors.grey666,
+                                      fontSize: 15.0,
+                                      fontFamily: 'Proxima-Nova-Regular')),
+                            )),
+                        Expanded(
+                          flex: 1,
+                          child: InkWell(
+                              onTap: () {},
+                              child: Image(
+                                image: AssetImage(
+                                  'assets/images/icon/icon_info.png',
+                                ),
+                                // fit: BoxFit.contain,
+                                height: 27,
+                                width: 27,
+                              )),
+                        ),
+                      ],
+                    )),
+                  ),
+                )
+              : Container()
+      ]),
     ),
   };
 
