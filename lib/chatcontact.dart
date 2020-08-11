@@ -2,244 +2,9 @@ import 'package:flutter/material.dart';
 import 'components/header.dart';
 import 'components/search.dart';
 import 'utils/theme.dart' as Theme;
+import 'models/contact_model.dart';
 
 class ChatContactPage extends StatelessWidget {
-  @override
-  Widget ContentContact() {
-    return Container(
-      child: Column(children: <Widget>[
-        Container(
-          margin: new EdgeInsets.symmetric(vertical: 5.0),
-          height: 70,
-          child: ListTile(
-              title: Row(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Container(
-                        child: CircleAvatar(
-                            radius: (30),
-                            backgroundColor: Colors.white,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child:
-                                  Image.asset("assets/images/contact_avt1.png"),
-                            ))),
-                  )),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
-                    ),
-                  ),
-                  child: Flex(
-                    direction: Axis.vertical,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Arla Waing',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Proxima-Nova')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text('+61 854 97136521',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 14.0,
-                              fontFamily: 'Proxima-Nova-Regular')),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
-        ),
-        Container(
-          margin: new EdgeInsets.symmetric(vertical: 5.0),
-          height: 70,
-          child: ListTile(
-              title: Row(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Container(
-                        child: CircleAvatar(
-                            radius: (30),
-                            backgroundColor: Colors.white,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child:
-                                  Image.asset("assets/images/contact_avt2.png"),
-                            ))),
-                  )),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
-                    ),
-                  ),
-                  child: Flex(
-                    direction: Axis.vertical,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Alexander',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Proxima-Nova')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text('+61 822 63698795',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 14.0,
-                              fontFamily: 'Proxima-Nova-Regular')),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
-        ),
-        Container(
-          margin: new EdgeInsets.symmetric(vertical: 5.0),
-          height: 70,
-          child: ListTile(
-              title: Row(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Container(
-                        child: CircleAvatar(
-                            radius: (30),
-                            backgroundColor: Colors.white,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child:
-                                  Image.asset("assets/images/contact_avt3.png"),
-                            ))),
-                  )),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
-                    ),
-                  ),
-                  child: Flex(
-                    direction: Axis.vertical,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Carza Heldan',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Proxima-Nova')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text('+61 857 15993422',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 14.0,
-                              fontFamily: 'Proxima-Nova-Regular')),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
-        ),
-        Container(
-          margin: new EdgeInsets.symmetric(vertical: 5.0),
-          height: 70,
-          child: ListTile(
-              title: Row(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Container(
-                        child: CircleAvatar(
-                            radius: (30),
-                            backgroundColor: Colors.white,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child:
-                                  Image.asset("assets/images/contact_avt4.png"),
-                            ))),
-                  )),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
-                    ),
-                  ),
-                  child: Flex(
-                    direction: Axis.vertical,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Steven Swap',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Proxima-Nova')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text('+61 857 15993422',
-                          style: TextStyle(
-                              color: Theme.Colors.grey666,
-                              fontSize: 14.0,
-                              fontFamily: 'Proxima-Nova-Regular')),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
-        ),
-      ]),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -252,16 +17,24 @@ class ChatContactPage extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[
           Container(
-            child: IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {},
-            ),
-          ),
+            // decoration: new BoxDecoration(color: Colors.red),
+            margin: EdgeInsets.only(right: 22),
+            child: InkWell(
+                onTap: () {},
+                child: Image(
+                  image: AssetImage(
+                    'assets/images/icon/icon_add.png',
+                  ),
+                  // fit: BoxFit.contain,
+                  height: 23,
+                  width: 23,
+                )),
+          )
         ],
       ),
       body: Container(
         child: ListView(
-          children: <Widget>[
+          children: [
             Search(),
             Container(
               // decoration: new BoxDecoration(color: Colors.blue),
@@ -366,7 +139,68 @@ class ChatContactPage extends StatelessWidget {
                 ],
               )),
             ),
-            ContentContact(),
+            Container(
+              child: Column(children: <Widget>[
+                for (var contact in contacts)
+                  Container(
+                    margin: new EdgeInsets.symmetric(vertical: 5.0),
+                    height: 70,
+                    child: ListTile(
+                        title: Row(
+                      children: [
+                        Expanded(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: Container(
+                                  child: CircleAvatar(
+                                      radius: (30),
+                                      backgroundColor: Colors.white,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(30),
+                                        child: Image.asset(contact.avtUrl),
+                                      ))),
+                            )),
+                        Expanded(
+                          flex: 4,
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                    width: 1, color: Theme.Colors.grey666),
+                              ),
+                            ),
+                            child: Flex(
+                              direction: Axis.vertical,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(contact.name,
+                                    style: TextStyle(
+                                        color: Theme.Colors.grey666,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Proxima-Nova')),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(contact.phone,
+                                    style: TextStyle(
+                                        color: Theme.Colors.grey666,
+                                        fontSize: 14.0,
+                                        fontFamily: 'Proxima-Nova-Regular')),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
+                  )
+              ]),
+            ),
           ],
         ),
       ),

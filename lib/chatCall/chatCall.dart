@@ -21,91 +21,76 @@ class _ChatCall extends State<ChatCall> {
     0: Container(
       child: Column(children: <Widget>[
         Container(
-          margin: new EdgeInsets.symmetric(vertical: 5.0),
+          decoration: BoxDecoration(
+            // color: Colors.red,
+            border: Border(
+              bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
+            ),
+          ),
+          margin: EdgeInsets.only(left: 25),
+          padding: EdgeInsets.only(right: 20),
           height: 70,
           child: ListTile(
+            contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
             title: Container(
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(width: 1, color: Theme.Colors.grey666),
+                child: Row(
+              children: [
+                Expanded(
+                  flex: 6,
+                  child: Flex(
+                    direction: Axis.vertical,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Arla Waing',
+                          style: TextStyle(
+                              color: Theme.Colors.grey343,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Proxima-Nova')),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text('mobile',
+                          style: TextStyle(
+                              color: Theme.Colors.grey666,
+                              fontSize: 14.0,
+                              fontFamily: 'Proxima-Nova-Regular')),
+                    ],
                   ),
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 6,
-                      child: Flex(
-                        direction: Axis.vertical,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Arla Waing',
-                              style: TextStyle(
-                                  color: Theme.Colors.grey343,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Proxima-Nova')),
-                          SizedBox(
-                            height: 5,
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          // color: Colors.red,
                           ),
-                          Text('mobile',
-                              style: TextStyle(
-                                  color: Theme.Colors.grey666,
-                                  fontSize: 14.0,
-                                  fontFamily: 'Proxima-Nova-Regular')),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Text('4/8/17'),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: InkWell(
-                          onTap: () {},
-                          child: Image(
-                            image: AssetImage(
-                              'assets/images/icon/icon_info.png',
-                            ),
-                            // fit: BoxFit.contain,
-                            height: 27,
-                            width: 27,
-                          )),
-                    ),
-                  ],
-                )),
+                      child: Text('4/8/17',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Theme.Colors.grey666,
+                              fontSize: 15.0,
+                              fontFamily: 'Proxima-Nova-Regular')),
+                    )),
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                      onTap: () {},
+                      child: Image(
+                        image: AssetImage(
+                          'assets/images/icon/icon_info.png',
+                        ),
+                        // fit: BoxFit.contain,
+                        height: 27,
+                        width: 27,
+                      )),
+                ),
+              ],
+            )),
           ),
         ),
       ]),
     ),
-    // Container(
-    //   height: 70.0,
-    //   child: Row(
-    //     children: <Widget>[
-    //       Expanded(
-    //           flex: 5,
-    //           child: Container(
-    //             child: Column(
-    //               children: <Widget>[
-    //                 Text('Arla Waing'),
-    //                 Text(
-    //                   'mobile',
-    //                 ),
-    //               ],
-    //             ),
-    //           )),
-    //       Expanded(
-    //         flex: 1,
-    //         child: Text('desfh'),
-    //       ),
-    //       Expanded(
-    //         flex: 1,
-    //         child: Text('dfef'),
-    //       ),
-    //     ],
-    //   ),
-    // ),
     1: ListTile(
       leading: FlutterLogo(size: 72.0),
       title: Text('Three-line ListTile'),
@@ -153,8 +138,8 @@ class _ChatCall extends State<ChatCall> {
                       'assets/images/icon/phone_white.png',
                     ),
                     // fit: BoxFit.contain,
-                    height: 27,
-                    width: 27,
+                    height: 25,
+                    width: 25,
                   )),
             )
           ],
