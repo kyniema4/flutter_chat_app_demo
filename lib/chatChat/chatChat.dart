@@ -44,12 +44,9 @@ class _ChatChatPageState extends State<ChatChatPage> {
                 prefixIcon: 
                   Icon(Icons.search, color: Theme.Colors.grey330, 
                 ),
-                // suffixIcon: 
-                // icon: Icon(Icons.search, color: Theme.Colors.grey330,),
-                // prefixIconConstraints: BoxConstraints(minWidth: 10,)
               ),
               style: TextStyle(fontFamily: 'Proxima-Nova-Regular', fontSize: 14.0),
-              textAlign: TextAlign.center,
+              // textAlign: TextAlign.center,
             ),
           ),
           ChatContentPage(),

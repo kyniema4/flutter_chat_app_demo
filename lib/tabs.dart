@@ -57,9 +57,10 @@ class _TabsPage extends State<TabsPage> {
         shape: CircularNotchedRectangle(),
         child: Container(
           height: 55,
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MaterialButton(
                 minWidth: 50,
