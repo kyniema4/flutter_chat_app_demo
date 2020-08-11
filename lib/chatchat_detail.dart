@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bubble/bubble.dart';
 import 'utils/theme.dart' as Theme;
 import 'utils/style.dart';
 import 'models/chat_model.dart';
@@ -13,25 +14,20 @@ class ChatChatDetail extends StatefulWidget {
 
 class _ChatChatDetailState extends State<ChatChatDetail> {
   bool isTextFiledFocus = false;
-  
   _buiderMessage(Message message, bool isMe) {
-    final Column msg = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: <Widget>[
-        Container(
-          margin: isMe ? EdgeInsets.only(top: 10.0, bottom: 10.0, right: 20.0)
-                      : EdgeInsets.only(top: 10.0, bottom: 10.0,left: 20.0),
-          padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
-          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
-          decoration: new BoxDecoration(
-            color: isMe ? Theme.Colors.purpleMain : Colors.white,
-            borderRadius: isMe  ? isMeBorderRadius6 : isFriendBorderRadius6,
-            boxShadow: [messageBoxShadow],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
+    final Container msg = Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.8),
+            child: Bubble(
+              margin: isMe ? BubbleEdges.only(top: 10.0, bottom: 10.0, right: 20.0)
+                    : BubbleEdges.only(top: 10.0, bottom: 10.0,left: 20.0),
+              padding: BubbleEdges.symmetric(horizontal: 25.0, vertical: 15.0),
+              nip: isMe ? BubbleNip.rightBottom : BubbleNip.leftBottom,
+              color: isMe ? Theme.Colors.purpleMain : Colors.white,
+              child: Text(
                 message.text,
                 style: TextStyle(
                   color: isMe ? Colors.white : Color(0xff666666),
@@ -39,10 +35,10 @@ class _ChatChatDetailState extends State<ChatChatDetail> {
                   fontFamily: 'Proxima-Nova-Regular'
                 ),
               ),
-            ],
-          ),
-        )
-      ]
+            ),
+          )
+        ],
+      ),
     );
     if(isMe) {
       return msg;

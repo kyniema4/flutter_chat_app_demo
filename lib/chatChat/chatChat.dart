@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../models/user_model.dart';
 import 'chatChatHeader.dart';
 import 'chatContent.dart';
+import '../components/search.dart';
+import '../utils/theme.dart' as Theme;
+import '../utils/style.dart';
 class ChatChatPage extends StatefulWidget{
   User user;
    ChatChatPage({this.user});
@@ -17,28 +20,40 @@ class _ChatChatPageState extends State<ChatChatPage> {
       body: Container(
         child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              // onChanged: (value) {
-              //   filterSearchResults(value);
-              // },
-              // controller: editingController,
+          Container(
+            height: 35,
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 13.0),
+            // padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 15),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6.0),
+              color: Theme.Colors.grey9cd
+            ),
+            child: TextFormField(
+              textInputAction: TextInputAction.next,
               decoration: InputDecoration(
-                  // labelText: "Search",
-                  hintText: "Search for message or users",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)))),
+                hintText: 'Search for message or users',
+                enabledBorder: UnderlineInputBorder(      
+                  borderSide: BorderSide(color: Theme.Colors.transparent),   
+                ),  
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Theme.Colors.transparent),
+                ),
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Theme.Colors.transparent),
+                ),
+                prefixIcon: 
+                  Icon(Icons.search, color: Theme.Colors.grey330, 
+                ),
+                // suffixIcon: 
+                // icon: Icon(Icons.search, color: Theme.Colors.grey330,),
+                // prefixIconConstraints: BoxConstraints(minWidth: 10,)
+              ),
+              style: TextStyle(fontFamily: 'Proxima-Nova-Regular', fontSize: 14.0),
+              textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
-            height: 10.0,
-          ),
           ChatContentPage(),
-         
         ],
-      // ),
       )
     ));
   }

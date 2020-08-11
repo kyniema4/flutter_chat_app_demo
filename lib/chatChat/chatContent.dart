@@ -18,6 +18,7 @@ class _ChatContentPageState extends State<ChatContentPage> {
       child: Container(
         color: Theme.Colors.purpleMain100,
         child: ListView.builder(
+          padding: EdgeInsets.only(top: 20.0),
           itemCount: chats.length,
           itemBuilder:(BuildContext context, int index) {
             final Message chat = chats[index];

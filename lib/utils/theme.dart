@@ -36,7 +36,9 @@ class Colors {
   static const purpleMain100 = Color(0xfff9fafc);
   static const grey100 = Color(0xfff8f8f8);
   static const grey300 = Color(0xff909295);
+  static const grey330 = Color(0xff7c7c7c);
   static const grey350 = Color(0xff666666);
+
   static const grey400 = Color(0xff434343);
   static const red500 = Color(0xffe32f21);
 
