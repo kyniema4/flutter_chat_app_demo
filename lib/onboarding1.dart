@@ -57,13 +57,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             Image.asset('assets/images/img_Boarding1.png',
                 fit: BoxFit.contain, height: 230.0),
             Column(children: <Widget>[
-              SizedBox(height: 45.0),
+              SizedBox(height: 40.0),
               Text(
                 'Fast Messaging',
                 style: titleSlideStyle,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 25.0),
+              SizedBox(height: 20.0),
               Text(
                 'Chat app fast messaging and powerful than any other application',
                 style: contentSlideStyle,
@@ -82,13 +82,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             Image.asset('assets/images/img-Boarding2.png',
                 fit: BoxFit.contain, height: 230.0),
             Column(children: <Widget>[
-              SizedBox(height: 45.0),
+              SizedBox(height: 40.0),
               Text(
                 'Secure System',
                 style: titleSlideStyle,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 25.0),
+              SizedBox(height: 20.0),
               Text(
                 'Chat app secure system from hacker attack and we guarantee your data safe',
                 style: contentSlideStyle,
@@ -107,13 +107,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             Image.asset('assets/images/img-Boarding3.png',
                 fit: BoxFit.contain, height: 230.0),
             Column(children: <Widget>[
-              SizedBox(height: 45.0),
+              SizedBox(height: 40.0),
               Text(
                 'Free Call and Chat',
                 style: titleSlideStyle,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 25.0),
+              SizedBox(height: 20.0),
               Text(
                 'Chat app free call and chat anytime and everytime',
                 style: contentSlideStyle,
@@ -190,7 +190,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     alignment: Alignment.center,
                     child: Icon(
-                        _current == index ? Icons.circle : Icons.lens_outlined,
+                        // _current == index ? Icons.circle : Icons.lens_outlined,
+                        _current == index
+                            ? Icons.lens
+                            : Icons.panorama_fish_eye,
                         color: _current == index
                             ? Color.fromRGBO(255, 255, 255, 1)
                             : Color.fromRGBO(255, 255, 255, 0.3),
