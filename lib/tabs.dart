@@ -17,10 +17,10 @@ class TabsPage extends StatefulWidget {
 class _TabsPage extends State<TabsPage> {
   PageController _myPage = PageController(initialPage: 0);
 
-  Color _iconColor0 = Theme.Colors.purpleMain;
-  Color _iconColor1 = Theme.Colors.blue293;
-  Color _iconColor2 = Theme.Colors.blue293;
-  Color _iconColor3 = Theme.Colors.blue293;
+  // Color _iconColor0 = Theme.Colors.purpleMain;
+  // Color _iconColor1 = Theme.Colors.blue293;
+  // Color _iconColor2 = Theme.Colors.blue293;
+  // Color _iconColor3 = Theme.Colors.blue293;
 
   AssetImage _image0 = AssetImage('assets/images/icon/user_activetab.png');
   AssetImage _image1 = AssetImage('assets/images/icon/chat_tab.png');
@@ -29,6 +29,7 @@ class _TabsPage extends State<TabsPage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width - 20;
     return Scaffold(
       body: PageView(
         controller: _myPage,
@@ -61,80 +62,98 @@ class _TabsPage extends State<TabsPage> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MaterialButton(
-                minWidth: 50,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                ),
-                child: Image(image: _image0, width: 28, fit: BoxFit.contain),
-                onPressed: () {
-                  _image0 = AssetImage('assets/images/icon/user_activetab.png');
-                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
-                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
-                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
+              Container(
+                width: width / 4,
+                // color: Colors.red,
+                child: MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
+                  child: Image(image: _image0, width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 =
+                        AssetImage('assets/images/icon/user_activetab.png');
+                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                    _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                    _image3 = AssetImage('assets/images/icon/setting_tab.png');
 
-                  setState(() {
-                    _myPage.jumpToPage(0);
-                    // title = 'Contacts';
-                  });
-                },
-              ),
-              MaterialButton(
-                minWidth: 50,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.0,
+                    setState(() {
+                      _myPage.jumpToPage(0);
+                      // title = 'Contacts';
+                    });
+                  },
                 ),
-                child: Image(image: _image1, width: 28, fit: BoxFit.contain),
-                onPressed: () {
-                  _image0 = AssetImage('assets/images/icon/user_tab.png');
-                  _image1 = AssetImage('assets/images/icon/chat_activetab.png');
-                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
-                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
-
-                  setState(() {
-                    _myPage.jumpToPage(1);
-                    // title = 'Contacts';
-                  });
-                },
               ),
-              MaterialButton(
-                minWidth: 50,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.0,
+              Container(
+                width: width / 4,
+                // color: Colors.red,
+                child: MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
+                  child: Image(image: _image1, width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 = AssetImage('assets/images/icon/user_tab.png');
+                    _image1 =
+                        AssetImage('assets/images/icon/chat_activetab.png');
+                    _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                    _image3 = AssetImage('assets/images/icon/setting_tab.png');
+
+                    setState(() {
+                      _myPage.jumpToPage(1);
+                      // title = 'Contacts';
+                    });
+                  },
                 ),
-                child: Image(image: _image2, width: 28, fit: BoxFit.contain),
-                onPressed: () {
-                  _image0 = AssetImage('assets/images/icon/user_tab.png');
-                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
-                  _image2 =
-                      AssetImage('assets/images/icon/phone_activetab.png');
-                  _image3 = AssetImage('assets/images/icon/setting_tab.png');
-
-                  setState(() {
-                    _myPage.jumpToPage(2);
-                    // title = 'Contacts';
-                  });
-                },
               ),
-              MaterialButton(
-                minWidth: 50,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.0,
+              Container(
+                // color: Colors.red,
+                width: width / 4,
+                child: MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
+                  child: Image(image: _image2, width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 = AssetImage('assets/images/icon/user_tab.png');
+                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                    _image2 =
+                        AssetImage('assets/images/icon/phone_activetab.png');
+                    _image3 = AssetImage('assets/images/icon/setting_tab.png');
+
+                    setState(() {
+                      _myPage.jumpToPage(2);
+                      // title = 'Contacts';
+                    });
+                  },
                 ),
-                child: Image(image: _image3, width: 28, fit: BoxFit.contain),
-                onPressed: () {
-                  _image0 = AssetImage('assets/images/icon/user_tab.png');
-                  _image1 = AssetImage('assets/images/icon/chat_tab.png');
-                  _image2 = AssetImage('assets/images/icon/phone_tab.png');
-                  _image3 =
-                      AssetImage('assets/images/icon/setting_activetab.png');
-
-                  setState(() {
-                    _myPage.jumpToPage(3);
-                    // title = 'Contacts';
-                  });
-                },
               ),
+              Container(
+                // color: Colors.red,
+                width: width / 4,
+                child: MaterialButton(
+                  minWidth: 50,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
+                  child: Image(image: _image3, width: 28, fit: BoxFit.contain),
+                  onPressed: () {
+                    _image0 = AssetImage('assets/images/icon/user_tab.png');
+                    _image1 = AssetImage('assets/images/icon/chat_tab.png');
+                    _image2 = AssetImage('assets/images/icon/phone_tab.png');
+                    _image3 =
+                        AssetImage('assets/images/icon/setting_activetab.png');
+
+                    setState(() {
+                      _myPage.jumpToPage(3);
+                      // title = 'Contacts';
+                    });
+                  },
+                ),
+              )
             ],
           ),
         ),

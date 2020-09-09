@@ -10,7 +10,7 @@ class ChatSettingPage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.0),
+          preferredSize: Size.fromHeight(50.0),
           child: AppBar(
               backgroundColor: Theme.Colors.purpleMain,
               elevation: 0,
@@ -19,12 +19,16 @@ class ChatSettingPage extends StatelessWidget {
               )),
         ),
         body: Container(
+          decoration: new BoxDecoration(
+            color: Theme.Colors.greyede,
+          ),
           child: Column(children: <Widget>[
             Container(
               decoration: new BoxDecoration(color: Theme.Colors.purpleMain),
               height: height / 2 - 120,
               child: Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
                       radius: 55,
@@ -43,6 +47,7 @@ class ChatSettingPage extends StatelessWidget {
                       ),
                     ),
                     Container(
+                      margin: const EdgeInsets.only(bottom: 20),
                       child: Text(
                         '+61 896 98587625',
                         style: TextStyle(
@@ -55,92 +60,95 @@ class ChatSettingPage extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: 18.0,
-              decoration: new BoxDecoration(
-                color: Theme.Colors.greyede,
-              ),
-            ),
-            Container(
-              height: (height / 2) - 100,
-              padding: EdgeInsets.only(left: 30),
-              decoration: new BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    decoration: new BoxDecoration(
-                      border: Border(
-                        bottom: borderList,
-                      ),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.only(left: 0.0, right: 20),
-                      title: Text(
-                        'Set Profile Photo',
-                        style: textTitleSetting,
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Theme.Colors.grey9cd,
-                      ),
-                      // EdgeInsets.symmetric(horizontal: 16.0),
-                    ),
+            Column(
+              children: [
+                Container(
+                  height: 18.0,
+                  decoration: new BoxDecoration(
+                    color: Theme.Colors.greyede,
                   ),
-                  Container(
-                    decoration: new BoxDecoration(
-                      border: Border(
-                        bottom: borderList,
-                      ),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.only(left: 0.0, right: 20),
-                      title: Text(
-                        'Privacy and Security',
-                        style: textTitleSetting,
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Theme.Colors.grey9cd,
-                      ),
-                    ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 30),
+                  decoration: new BoxDecoration(
+                    color: Colors.white,
                   ),
-                  Container(
-                    decoration: new BoxDecoration(
-                      border: Border(bottom: borderList),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.only(left: 0.0, right: 20),
-                      title: Text(
-                        'Data and Storage',
-                        style: textTitleSetting,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        decoration: new BoxDecoration(
+                          border: Border(
+                            bottom: borderList,
+                          ),
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.only(left: 0.0, right: 20),
+                          title: Text(
+                            'Set Profile Photo',
+                            style: textTitleSetting,
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Theme.Colors.grey9cd,
+                          ),
+                          // EdgeInsets.symmetric(horizontal: 16.0),
+                        ),
                       ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Theme.Colors.grey9cd,
+                      Container(
+                        decoration: new BoxDecoration(
+                          border: Border(
+                            bottom: borderList,
+                          ),
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.only(left: 0.0, right: 20),
+                          title: Text(
+                            'Privacy and Security',
+                            style: textTitleSetting,
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Theme.Colors.grey9cd,
+                          ),
+                        ),
                       ),
-                    ),
+                      Container(
+                        decoration: new BoxDecoration(
+                          border: Border(bottom: borderList),
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.only(left: 0.0, right: 20),
+                          title: Text(
+                            'Data and Storage',
+                            style: textTitleSetting,
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Theme.Colors.grey9cd,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        contentPadding: EdgeInsets.only(left: 0.0, right: 20),
+                        title: Text(
+                          'Notifications',
+                          style: textTitleSetting,
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Theme.Colors.grey9cd,
+                        ),
+                      ),
+                    ],
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.only(left: 0.0, right: 20),
-                    title: Text(
-                      'Notifications',
-                      style: textTitleSetting,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Theme.Colors.grey9cd,
-                    ),
+                ),
+                Container(
+                  height: 18.0,
+                  decoration: new BoxDecoration(
+                    color: Theme.Colors.greyede,
                   ),
-                ],
-              ),
-            ),
-            Container(
-              height: 18.0,
-              decoration: new BoxDecoration(
-                color: Theme.Colors.greyede,
-              ),
+                ),
+              ],
             ),
           ]),
         ),

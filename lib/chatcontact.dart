@@ -8,6 +8,7 @@ import 'utils/style.dart';
 class ChatContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.Colors.purpleMain,
@@ -87,70 +88,78 @@ class ChatContactPage extends StatelessWidget {
                       fontFamily: 'Proxima-Nova-Regular')),
             ),
             Container(
-              margin: new EdgeInsets.symmetric(vertical: 5.0),
+              margin: new EdgeInsets.symmetric(vertical: 5.0, horizontal: 0),
               // decoration: BoxDecoration(
               //   color: Colors.pink,
               // ),
               height: 50,
               child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
                   title: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Theme.Colors.purpleMain,
-                      ),
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 35,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 4,
-                    child: Container(
-                      height: 50,
-                      margin: EdgeInsets.only(left: 10),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: borderList,
+                    children: [
+                      // Expanded(
+                      //   flex: 1,
+                      // child:
+                      Container(
+                        height: 40,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.Colors.purpleMain,
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 35,
                         ),
                       ),
-                      child: Flex(
-                        direction: Axis.vertical,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Invite Friend',
-                              style: TextStyle(
-                                  color: Theme.Colors.purpleMain,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Proxima-Nova')),
-                        ],
+                      // ),
+                      // Expanded(
+                      //   flex: 13,
+                      // child:
+                      Container(
+                        width: width - 90,
+                        height: 50,
+                        margin: EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: borderList,
+                          ),
+                        ),
+                        child: Flex(
+                          direction: Axis.vertical,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Invite Friend',
+                                style: TextStyle(
+                                    color: Theme.Colors.purpleMain,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Proxima-Nova')),
+                          ],
+                        ),
                       ),
-                    ),
-                  ),
-                ],
-              )),
+                      // ),
+                    ],
+                  )),
             ),
             Container(
               child: Column(children: <Widget>[
                 for (var contact in contacts)
                   Container(
+                    // color: Colors.pink,
                     margin: new EdgeInsets.symmetric(vertical: 5.0),
                     height: 70,
                     child: ListTile(
+                        contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
                         title: Row(
-                      children: [
-                        Expanded(
-                            flex: 1,
-                            child: Container(
+                          children: [
+                            // Expanded(
+                            //   flex: 1,
+                            // child:
+                            Container(
+                              width: 90,
                               decoration: BoxDecoration(
                                 shape: BoxShape.rectangle,
                               ),
@@ -162,41 +171,44 @@ class ChatContactPage extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(30),
                                         child: Image.asset(contact.avtUrl),
                                       ))),
-                            )),
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            margin: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: borderList,
+                            ),
+                            // ),
+                            // Expanded(
+                            //   flex: 4,
+                            //   child:
+                            Container(
+                              width: width - 90,
+                              margin: EdgeInsets.only(left: 0),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: borderList,
+                                ),
+                              ),
+                              child: Flex(
+                                direction: Axis.vertical,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(contact.name,
+                                      style: TextStyle(
+                                          color: Theme.Colors.grey666,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Proxima-Nova')),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(contact.phone,
+                                      style: TextStyle(
+                                          color: Theme.Colors.grey666,
+                                          fontSize: 14.0,
+                                          fontFamily: 'Proxima-Nova-Regular')),
+                                ],
                               ),
                             ),
-                            child: Flex(
-                              direction: Axis.vertical,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(contact.name,
-                                    style: TextStyle(
-                                        color: Theme.Colors.grey666,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Proxima-Nova')),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(contact.phone,
-                                    style: TextStyle(
-                                        color: Theme.Colors.grey666,
-                                        fontSize: 14.0,
-                                        fontFamily: 'Proxima-Nova-Regular')),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    )),
+                            // ),
+                          ],
+                        )),
                   )
               ]),
             ),

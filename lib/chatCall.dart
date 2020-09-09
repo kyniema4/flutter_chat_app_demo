@@ -65,31 +65,42 @@ class _ChatCall extends State<ChatCall> {
                     ),
                   ),
                   Expanded(
-                      flex: 2,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            // color: Colors.red,
-                            ),
-                        child: Text(call.date,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Theme.Colors.grey666,
-                                fontSize: 15.0,
-                                fontFamily: 'Proxima-Nova-Regular')),
-                      )),
-                  Expanded(
-                    flex: 1,
-                    child: InkWell(
-                        onTap: () {},
-                        child: Image(
-                          image: AssetImage(
-                            'assets/images/icon/icon_info.png',
+                      flex: 3,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 20.0),
+                            decoration: BoxDecoration(),
+                            child: Text(call.date,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Theme.Colors.grey666,
+                                    fontSize: 15.0,
+                                    fontFamily: 'Proxima-Nova-Regular')),
                           ),
-                          // fit: BoxFit.contain,
-                          height: 27,
-                          width: 27,
-                        )),
-                  ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 5.0),
+                            child: InkWell(
+                                onTap: () {},
+                                child: Image(
+                                  image: AssetImage(
+                                    'assets/images/icon/icon_info.png',
+                                  ),
+                                  // fit: BoxFit.contain,
+                                  height: 27,
+                                  width: 27,
+                                )),
+                          ),
+                        ],
+                      )
+
+                      // ),
+                      // Expanded(
+                      //   flex: 1,
+                      // child:
+
+                      ),
                 ],
               )),
             ),
@@ -140,31 +151,42 @@ class _ChatCall extends State<ChatCall> {
                           ),
                         ),
                         Expanded(
-                            flex: 2,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  // color: Colors.red,
-                                  ),
-                              child: Text(call.date,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Theme.Colors.grey666,
-                                      fontSize: 15.0,
-                                      fontFamily: 'Proxima-Nova-Regular')),
-                            )),
-                        Expanded(
-                          flex: 1,
-                          child: InkWell(
-                              onTap: () {},
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/images/icon/icon_info.png',
+                            flex: 3,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(right: 20.0),
+                                  decoration: BoxDecoration(),
+                                  child: Text(call.date,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Theme.Colors.grey666,
+                                          fontSize: 15.0,
+                                          fontFamily: 'Proxima-Nova-Regular')),
                                 ),
-                                // fit: BoxFit.contain,
-                                height: 27,
-                                width: 27,
-                              )),
-                        ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 5.0),
+                                  child: InkWell(
+                                      onTap: () {},
+                                      child: Image(
+                                        image: AssetImage(
+                                          'assets/images/icon/icon_info.png',
+                                        ),
+                                        // fit: BoxFit.contain,
+                                        height: 27,
+                                        width: 27,
+                                      )),
+                                ),
+                              ],
+                            )
+
+                            // ),
+                            // Expanded(
+                            //   flex: 1,
+                            // child:
+
+                            ),
                       ],
                     )),
                   ),

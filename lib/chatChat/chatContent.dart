@@ -47,26 +47,32 @@ class _ChatContentPageState extends State<ChatContentPage> {
                             padding: marginBottom20,
                             decoration: BoxDecoration(
                                 border: Border(bottom: borderList)),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Text(chat.sender.name,
-                                            style: nameUserList),
-                                        Text(chat.time, style: timeChat),
-                                      ]),
-                                  SizedBox(height: 8.0),
-                                  Container(
-                                    // padding: EdgeInsets.symmetric(vertical: 10.0),
-                                    child: Text(chat.text,
-                                        // maxLines: 2,
-                                        // overflow: TextOverflow.ellipsis,
-                                        style: textChatList),
-                                  )
-                                ]),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                minHeight: 60,
+                              ),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: <Widget>[
+                                          Text(chat.sender.name,
+                                              style: nameUserList),
+                                          Text(chat.time, style: timeChat),
+                                        ]),
+                                    SizedBox(height: 8.0),
+                                    Container(
+                                      // padding: EdgeInsets.symmetric(vertical: 10.0),
+                                      child: Text(chat.text,
+                                          // maxLines: 2,
+                                          // overflow: TextOverflow.ellipsis,
+                                          style: textChatList),
+                                    )
+                                  ]),
+                            ),
                           ),
                         )
                       ],
